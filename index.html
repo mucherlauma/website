@@ -1,0 +1,2046 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+<title>Chandini Connects</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&family=Vollkorn:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: "DM Sans", sans-serif;
+        background: #fffaf7;
+        color: #3d243e;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    .fixed-header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: #e8d8e8;
+        border-bottom: 1px solid rgba(61, 36, 62, 0.08);
+    }
+
+    .navbar {
+        min-height: 92px;
+        max-width: 1250px;
+        margin: auto;
+        padding: 12px 28px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 25px;
+    }
+
+    .brand {
+        display: flex;
+        flex-direction: column;
+        line-height: 0.9;
+        min-width: 190px;
+    }
+
+    .brand-main {
+        font-family: "Vollkorn", serif;
+        font-size: 48px;
+        font-weight: 600;
+        color: #5e3984;
+        letter-spacing: -2px;
+    }
+
+    .brand-sub {
+        font-family: "Vollkorn", serif;
+        font-size: 25px;
+        font-weight: 500;
+        color: #3d243e;
+        margin-left: 52px;
+        margin-top: 7px;
+        letter-spacing: 1px;
+    }
+
+    .nav-links {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .nav-links a {
+        padding: 11px 15px;
+        border-radius: 30px;
+        font-size: 14px;
+        font-weight: 600;
+        transition: 0.3s;
+    }
+
+    .nav-links a:hover {
+        background: rgba(94, 57, 132, 0.09);
+        color: #5e3984;
+    }
+
+    .nav-links .nav-cta {
+        background: #5e3984;
+        color: white;
+        padding: 12px 19px;
+    }
+
+    .nav-links .nav-cta:hover {
+        background: #472766;
+        color: white;
+    }
+
+    .hero {
+        min-height: 650px;
+        padding: 100px 25px 90px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+
+        background:
+            radial-gradient(circle at 15% 20%, rgba(232, 216, 232, 0.75), transparent 28%),
+            radial-gradient(circle at 85% 75%, rgba(238, 220, 205, 0.7), transparent 30%),
+            #fffaf7;
+    }
+
+    .hero-content {
+        max-width: 900px;
+    }
+
+    .eyebrow {
+        color: #8b668e;
+        font-size: 14px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        margin-bottom: 22px;
+    }
+
+    .hero h1 {
+        font-family: "Vollkorn", serif;
+        font-size: clamp(48px, 7vw, 82px);
+        line-height: 0.98;
+        font-weight: 600;
+        color: #3d243e;
+        margin-bottom: 25px;
+    }
+
+    .hero h1 span {
+        color: #5e3984;
+    }
+
+    .hero h2 {
+        font-family: "Vollkorn", serif;
+        font-size: clamp(27px, 4vw, 42px);
+        font-weight: 500;
+        margin-bottom: 22px;
+    }
+
+    .hero p {
+        max-width: 700px;
+        margin: auto;
+        color: #6e5a6e;
+        font-size: 17px;
+        line-height: 1.8;
+    }
+
+    .hero-buttons {
+        margin-top: 35px;
+        display: flex;
+        justify-content: center;
+        gap: 14px;
+        flex-wrap: wrap;
+    }
+
+    .primary-btn,
+    .secondary-btn {
+        padding: 15px 25px;
+        border-radius: 35px;
+        font-size: 14px;
+        font-weight: 700;
+        transition: 0.3s;
+    }
+
+    .primary-btn {
+        background: #5e3984;
+        color: white;
+    }
+
+    .primary-btn:hover {
+        background: #472766;
+        transform: translateY(-2px);
+    }
+
+    .secondary-btn {
+        border: 1px solid #5e3984;
+        color: #5e3984;
+        background: white;
+    }
+
+    .secondary-btn:hover {
+        background: #f2eaf3;
+        transform: translateY(-2px);
+    }
+
+    .intro {
+        padding: 100px 25px;
+        text-align: center;
+        background: white;
+    }
+
+    .section-small {
+        color: #9a719b;
+        font-size: 13px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        margin-bottom: 15px;
+    }
+
+    .section-title {
+        font-family: "Vollkorn", serif;
+        font-size: clamp(36px, 5vw, 58px);
+        font-weight: 600;
+        line-height: 1.05;
+        margin-bottom: 20px;
+    }
+
+    .section-text {
+        max-width: 700px;
+        margin: auto;
+        color: #766676;
+        line-height: 1.8;
+        font-size: 16px;
+    }
+
+    .services {
+        padding: 100px 25px;
+        background: #fffaf7;
+    }
+
+    .services-grid {
+        max-width: 1150px;
+        margin: 50px auto 0;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+    }
+
+    .service-card {
+        background: white;
+        border: 1px solid rgba(94, 57, 132, 0.1);
+        border-radius: 25px;
+        padding: 38px 30px;
+        min-height: 270px;
+        transition: 0.35s;
+    }
+
+    .service-card:hover {
+        transform: translateY(-7px);
+        box-shadow: 0 20px 45px rgba(61, 36, 62, 0.1);
+    }
+
+    .service-icon {
+        width: 58px;
+        height: 58px;
+        border-radius: 18px;
+        background: #eee2ef;
+        color: #5e3984;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 23px;
+        margin-bottom: 25px;
+    }
+
+    .service-card h3 {
+        font-family: "Vollkorn", serif;
+        font-size: 27px;
+        margin-bottom: 13px;
+    }
+
+    .service-card p {
+        color: #766676;
+        line-height: 1.7;
+        font-size: 15px;
+    }
+
+    .instagram-section {
+        padding: 110px 25px;
+        background: #fffaf7;
+        text-align: center;
+        overflow: hidden;
+    }
+
+    .instagram-header {
+        max-width: 750px;
+        margin: auto;
+    }
+
+    .instagram-header .section-title {
+        margin-bottom: 17px;
+    }
+
+    .instagram-carousel {
+        max-width: 1160px;
+        margin: 50px auto 0;
+        display: flex;
+        align-items: center;
+        gap: 18px;
+    }
+
+    .instagram-track-wrapper {
+        width: 100%;
+        overflow: hidden;
+    }
+
+    .instagram-track {
+        display: flex;
+        gap: 20px;
+        transition: transform 0.55s cubic-bezier(.4, 0, .2, 1);
+    }
+
+    .instagram-card {
+        position: relative;
+        flex: 0 0 calc((100% - 40px) / 3);
+        aspect-ratio: 1 / 1;
+        overflow: hidden;
+        border-radius: 22px;
+        background: #e8d8e8;
+        text-decoration: none;
+        box-shadow: 0 12px 35px rgba(61, 36, 62, 0.09);
+        cursor: pointer;
+    }
+
+    .instagram-card img {
+        width: 100%;
+        height: 100%;
+        display: block;
+        object-fit: cover;
+        transition: transform 0.55s ease;
+    }
+
+    .instagram-card:hover img {
+        transform: scale(1.08);
+    }
+
+    .instagram-overlay {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(94, 57, 132, 0.38);
+        opacity: 0;
+        transition: 0.3s;
+    }
+
+    .instagram-card:hover .instagram-overlay {
+        opacity: 1;
+    }
+
+    .play-button {
+        width: 65px;
+        height: 65px;
+        border-radius: 50%;
+        background: white;
+        color: #5e3984;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 23px;
+        padding-left: 4px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.18);
+    }
+
+    .reel-icon {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        width: 43px;
+        height: 43px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.94);
+        color: #5e3984;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 19px;
+        z-index: 3;
+    }
+
+    .reel-label {
+        position: absolute;
+        left: 15px;
+        bottom: 15px;
+        padding: 7px 13px;
+        background: rgba(61, 36, 62, 0.72);
+        color: white;
+        border-radius: 20px;
+        font-size: 12px;
+        font-weight: 700;
+        z-index: 3;
+    }
+
+    .carousel-arrow {
+        flex: 0 0 48px;
+        width: 48px;
+        height: 48px;
+        border: none;
+        border-radius: 50%;
+        background: white;
+        color: #5e3984;
+        box-shadow: 0 8px 25px rgba(61, 36, 62, 0.12);
+        cursor: pointer;
+        font-size: 18px;
+        transition: 0.3s;
+    }
+
+    .carousel-arrow:hover {
+        background: #5e3984;
+        color: white;
+        transform: scale(1.05);
+    }
+
+    .carousel-dots {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 7px;
+        margin-top: 27px;
+    }
+
+    .carousel-dot {
+        width: 7px;
+        height: 7px;
+        border: none;
+        border-radius: 20px;
+        background: #d5c3d7;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .carousel-dot.active {
+        width: 24px;
+        background: #5e3984;
+    }
+
+    .instagram-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        margin-top: 30px;
+        padding: 14px 22px;
+        border-radius: 30px;
+        background: #5e3984;
+        color: white;
+        font-size: 14px;
+        font-weight: 700;
+        transition: 0.3s;
+    }
+
+    .instagram-button:hover {
+        background: #472766;
+        transform: translateY(-2px);
+    }
+
+    .manifest {
+        padding: 110px 25px;
+        background: white;
+    }
+
+    .manifest-grid {
+        max-width: 1100px;
+        margin: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 70px;
+        align-items: center;
+    }
+
+    .manifest h2,
+    .career h2,
+    .trackers h2 {
+        font-family: "Vollkorn", serif;
+        font-size: clamp(40px, 5vw, 62px);
+        line-height: 1.05;
+        margin-bottom: 22px;
+    }
+
+    .manifest p,
+    .career p,
+    .trackers p {
+        color: #766676;
+        line-height: 1.8;
+        font-size: 16px;
+    }
+
+    .quote-box {
+        background: #eee2ef;
+        border-radius: 30px;
+        padding: 45px;
+        text-align: center;
+    }
+
+    .quote-box i {
+        color: #8c6790;
+        font-size: 30px;
+        margin-bottom: 20px;
+    }
+
+    .quote-box p {
+        font-family: "Vollkorn", serif;
+        color: #3d243e;
+        font-size: 27px;
+        line-height: 1.4;
+    }
+
+    .career {
+        padding: 110px 25px;
+        background: #fffaf7;
+    }
+
+    .career-inner,
+    .trackers-inner {
+        max-width: 1050px;
+        margin: auto;
+    }
+
+    .career-content,
+    .tracker-content {
+        max-width: 720px;
+    }
+
+    .career-points,
+    .tracker-points {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 18px;
+        margin-top: 40px;
+    }
+
+    .point {
+        background: white;
+        padding: 25px;
+        border-radius: 20px;
+        border: 1px solid rgba(94, 57, 132, 0.09);
+    }
+
+    .point i {
+        color: #5e3984;
+        font-size: 22px;
+        margin-bottom: 15px;
+    }
+
+    .point h3 {
+        font-family: "Vollkorn", serif;
+        font-size: 23px;
+        margin-bottom: 8px;
+    }
+
+    .point p {
+        font-size: 14px;
+        line-height: 1.6;
+    }
+
+    .trackers {
+        padding: 110px 25px;
+        background: white;
+    }
+
+    .contact {
+        padding: 110px 25px;
+        text-align: center;
+        background: #e8d8e8;
+    }
+
+    .contact h2 {
+        font-family: "Vollkorn", serif;
+        font-size: clamp(40px, 5vw, 62px);
+        line-height: 1.05;
+        margin-bottom: 18px;
+    }
+
+    .contact p {
+        max-width: 600px;
+        margin: auto;
+        color: #6e5a6e;
+        line-height: 1.8;
+    }
+
+    .chandini-footer {
+        position: relative;
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0;
+        overflow: hidden;
+        background: #000;
+        color: #fff;
+        box-sizing: border-box;
+    }
+
+    .footer-art {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        line-height: 0;
+        background: #f7f7f4;
+    }
+
+    .footer-art img {
+        display: block;
+        width: 100%;
+        height: auto;
+        margin: 0;
+        object-fit: contain;
+        object-position: center bottom;
+    }
+
+    .footer-main {
+        width: 100%;
+        margin: 0;
+        padding: 60px max(35px, calc((100% - 1180px) / 2));
+        display: grid;
+        grid-template-columns: 1.15fr 1fr 1fr;
+        align-items: start;
+        gap: 70px;
+        background: #000;
+        border-top: 1px solid rgba(255,255,255,.15);
+        box-sizing: border-box;
+    }
+
+    .footer-brand h2 {
+        margin: 0;
+        font-family: "Bodoni Moda", serif;
+        font-size: 55px;
+        font-weight: 400;
+        line-height: .9;
+        letter-spacing: -2px;
+        color: #fff;
+    }
+
+    .footer-brand > span {
+        display: block;
+        margin-top: 13px;
+        font-family: Arial, sans-serif;
+        font-size: 8px;
+        font-weight: 500;
+        letter-spacing: 7px;
+        color: #fff;
+    }
+
+    .footer-brand p {
+        margin: 28px 0 0;
+        font-family: Arial, sans-serif;
+        font-size: 11px;
+        line-height: 1.8;
+        color: rgba(255,255,255,.65);
+    }
+
+    .footer-links {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+
+    .footer-link-group {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .footer-link-group > span,
+    .footer-connect > span {
+        display: block;
+        margin-bottom: 10px;
+        font-family: Arial, sans-serif;
+        font-size: 7px;
+        font-weight: 600;
+        letter-spacing: 3px;
+        color: rgba(255,255,255,.45);
+    }
+
+    .footer-link-group a {
+        display: inline-block;
+        font-family: "Bodoni Moda", serif;
+        font-size: 14px;
+        font-weight: 400;
+        color: #fff;
+        text-decoration: none;
+        transition: transform .3s ease, opacity .3s ease;
+    }
+
+    .footer-link-group a:hover {
+        transform: translateX(4px);
+        opacity: .55;
+    }
+
+    .footer-connect h3 {
+        margin: 0 0 27px;
+        font-family: "Bodoni Moda", serif;
+        font-size: clamp(31px, 3vw, 45px);
+        font-weight: 400;
+        line-height: 1;
+        letter-spacing: -1px;
+        color: #fff;
+    }
+
+    .footer-connect h3 em {
+        color: #fff;
+        font-weight: 400;
+    }
+
+    .footer-socials {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .footer-socials a {
+        width: 39px;
+        height: 39px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(255,255,255,.35);
+        border-radius: 50%;
+        background: transparent;
+        color: #fff;
+        text-decoration: none;
+        font-size: 14px;
+        transition: transform .3s ease, background .3s ease, color .3s ease;
+    }
+
+    .footer-socials a i {
+        color: inherit;
+    }
+
+    .footer-socials a:hover {
+        transform: translateY(-4px);
+        background: #fff;
+        color: #000;
+    }
+
+    .footer-bottom {
+        width: 100%;
+        min-height: 68px;
+        padding: 0 max(35px, calc((100% - 1180px) / 2));
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 25px;
+        background: #000;
+        border-top: 1px solid rgba(255,255,255,.15);
+        box-sizing: border-box;
+    }
+
+    .footer-bottom span,
+    .footer-bottom a {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        font-size: 7px;
+        font-weight: 500;
+        letter-spacing: 2px;
+        color: rgba(255,255,255,.65);
+        text-decoration: none;
+    }
+
+    .footer-bottom a {
+        transition: color .25s ease;
+    }
+
+    .footer-bottom a:hover {
+        color: #fff;
+    }
+
+    .footer-brand,
+    .footer-links,
+    .footer-connect {
+        opacity: 0;
+        transform: translateY(22px);
+        transition:
+            opacity .8s cubic-bezier(.22,1,.36,1),
+            transform .8s cubic-bezier(.22,1,.36,1);
+    }
+
+    .chandini-footer.footer-visible .footer-brand {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: .05s;
+    }
+
+    .chandini-footer.footer-visible .footer-links {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: .17s;
+    }
+
+    .chandini-footer.footer-visible .footer-connect {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: .29s;
+    }
+
+    @media (max-width: 950px) {
+
+        .footer-main {
+            padding: 50px 35px;
+            grid-template-columns: 1fr 1fr;
+            gap: 45px;
+        }
+
+        .footer-connect {
+            grid-column: 1 / -1;
+        }
+
+        .footer-bottom {
+            padding: 0 35px;
+        }
+    }
+
+    @media (max-width: 900px) {
+
+        .navbar {
+            flex-direction: column;
+            justify-content: center;
+            padding: 15px 20px;
+        }
+
+        .brand {
+            align-items: center;
+        }
+
+        .brand-sub {
+            margin-left: 45px;
+        }
+
+        .nav-links {
+            justify-content: center;
+        }
+
+        .instagram-card {
+            flex: 0 0 calc((100% - 20px) / 2);
+        }
+
+        .services-grid {
+            grid-template-columns: 1fr;
+            max-width: 600px;
+        }
+
+        .manifest-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .career-points,
+        .tracker-points {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: 768px) {
+
+        .hero {
+            min-height: 580px;
+            padding: 80px 20px;
+        }
+
+        .instagram-section,
+        .manifest,
+        .career,
+        .trackers,
+        .contact {
+            padding: 80px 20px;
+        }
+
+        .instagram-card {
+            flex: 0 0 100%;
+        }
+
+        .carousel-arrow {
+            flex: 0 0 40px;
+            width: 40px;
+            height: 40px;
+        }
+
+        .instagram-carousel {
+            gap: 10px;
+        }
+
+        .instagram-track {
+            gap: 15px;
+        }
+
+        .footer-art {
+            width: 100%;
+            height: 220px;
+        }
+
+        .footer-art img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
+        }
+
+        .footer-main {
+            padding: 43px 20px 45px;
+            grid-template-columns: 1fr;
+            gap: 42px;
+            background: #000;
+        }
+
+        .footer-brand h2 {
+            font-size: 45px;
+        }
+
+        .footer-brand > span {
+            margin-top: 11px;
+            font-size: 7px;
+            letter-spacing: 6px;
+        }
+
+        .footer-brand p {
+            margin-top: 21px;
+            font-size: 10px;
+        }
+
+        .footer-links {
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .footer-link-group a {
+            font-size: 13px;
+        }
+
+        .footer-connect h3 {
+            max-width: 280px;
+            font-size: 35px;
+        }
+
+        .footer-socials a {
+            width: 37px;
+            height: 37px;
+            font-size: 13px;
+        }
+
+        .footer-bottom {
+            min-height: auto;
+            padding: 24px 20px 100px;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 11px;
+            background: #000;
+        }
+
+        .footer-bottom span,
+        .footer-bottom a {
+            font-size: 6.5px;
+            letter-spacing: 1.6px;
+        }
+
+        .footer-inner {
+            flex-direction: column;
+            text-align: center;
+        }
+    }
+
+    @media (max-width: 430px) {
+
+        .navbar {
+            min-height: 64px;
+            padding: 9px 15px;
+        }
+
+        .brand-main {
+            font-size: 38px;
+        }
+
+        .brand-sub {
+            font-size: 20px;
+            margin-left: 38px;
+        }
+
+        .nav-links {
+            gap: 3px;
+        }
+
+        .nav-links a {
+            padding: 8px 9px;
+            font-size: 11px;
+        }
+
+        .nav-links .nav-cta {
+            padding: 9px 12px;
+        }
+
+        .hero {
+            padding: 65px 18px;
+        }
+
+        .hero p {
+            font-size: 15px;
+        }
+
+        .primary-btn,
+        .secondary-btn {
+            width: 100%;
+        }
+
+        .carousel-arrow {
+            flex: 0 0 35px;
+            width: 35px;
+            height: 35px;
+            font-size: 14px;
+        }
+
+        .instagram-carousel {
+            gap: 7px;
+        }
+
+        .instagram-track {
+            gap: 12px;
+        }
+
+        .reel-icon {
+            width: 36px;
+            height: 36px;
+            font-size: 16px;
+        }
+
+        .play-button {
+            width: 55px;
+            height: 55px;
+            font-size: 20px;
+        }
+
+        .quote-box {
+            padding: 30px 20px;
+        }
+
+        .quote-box p {
+            font-size: 23px;
+        }
+    }
+
+    @media (max-width: 390px) {
+
+        .footer-art {
+            height: 195px;
+        }
+
+        .footer-main {
+            padding-left: 16px;
+            padding-right: 16px;
+        }
+
+        .footer-brand h2 {
+            font-size: 41px;
+        }
+
+        .footer-connect h3 {
+            font-size: 32px;
+        }
+
+        .footer-bottom {
+            padding-left: 16px;
+            padding-right: 16px;
+            padding-bottom: 95px;
+        }
+    }
+</style>
+```
+
+</head>
+
+<body id="top">
+
+```
+<header class="fixed-header">
+
+    <nav class="navbar">
+
+        <a href="#" class="brand">
+            <span class="brand-main">Chandini</span>
+            <span class="brand-sub">Connects</span>
+        </a>
+
+        <div class="nav-links">
+
+            <a href="manifest.html">
+                Manifest With Chandini
+            </a>
+
+            <a href="career-connect.html">
+                Career Connect
+            </a>
+
+            <a href="habit-planners.html">
+                Habit Trackers & Planners
+            </a>
+
+            <a href="mailto:chandiniconnects@gmail.com"
+               class="nav-cta">
+                Contact Me
+            </a>
+
+        </div>
+
+    </nav>
+
+</header>
+
+
+<section class="hero">
+
+    <div class="hero-content">
+
+        <div class="eyebrow">
+            Chandini Connects
+        </div>
+
+        <h1>
+            Welcome to
+            <span>Chandini Connects</span>
+        </h1>
+
+        <h2>
+            Connect with your next chapter.
+        </h2>
+
+        <p>
+            A little space for intentional living, personal growth,
+            career clarity, meaningful habits and becoming the person
+            you want to be.
+        </p>
+
+        <div class="hero-buttons">
+
+            <a href="#manifest" class="primary-btn">
+                Explore Chandini Connects
+            </a>
+
+            <a href="#contact" class="secondary-btn">
+                Connect With Me
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="intro">
+
+    <div class="section-small">
+        About Chandini Connects
+    </div>
+
+    <h2 class="section-title">
+        A little space for big possibilities.
+    </h2>
+
+    <p class="section-text">
+        Chandini Connects is about helping you pause, reflect,
+        plan and move forward with more clarity. Whether you're
+        working on yourself, your career, your habits or your goals,
+        every small step can create a meaningful change.
+    </p>
+
+</section>
+
+
+<section class="services">
+
+    <div style="text-align:center;">
+
+        <div class="section-small">
+            Explore
+        </div>
+
+        <h2 class="section-title">
+            Find what connects with you.
+        </h2>
+
+    </div>
+
+
+    <div class="services-grid">
+
+        <a href="manifest.html" class="service-card">
+
+            <div class="service-icon">
+                <i class="fa-regular fa-star"></i>
+            </div>
+
+            <h3>
+                Manifest With Chandini
+            </h3>
+
+            <p>
+                Create clarity around your dreams, intentions,
+                mindset and the life you want to build.
+            </p>
+
+        </a>
+
+
+        <a href="#career" class="service-card">
+
+            <div class="service-icon">
+                <i class="fa-solid fa-compass"></i>
+            </div>
+
+            <h3>
+                Career Connect
+            </h3>
+
+            <p>
+                Get clarity, direction and practical guidance
+                for your next career step.
+            </p>
+
+        </a>
+
+
+        <a href="#trackers" class="service-card">
+
+            <div class="service-icon">
+                <i class="fa-regular fa-calendar-check"></i>
+            </div>
+
+            <h3>
+                Habit Trackers & Planners
+            </h3>
+
+            <p>
+                Turn your intentions into simple daily systems
+                that help you stay consistent.
+            </p>
+
+        </a>
+
+    </div>
+
+</section>
+
+
+<section class="instagram-section" id="instagram">
+
+    <div class="instagram-header">
+
+        <div class="section-small">
+            Follow Along
+        </div>
+
+        <h2 class="section-title">
+            From Chandini's world
+        </h2>
+
+        <p class="section-text">
+            Inspiration, ideas, little reminders and moments
+            from Chandini Connects.
+        </p>
+
+    </div>
+
+
+    <div class="instagram-carousel">
+
+        <button class="carousel-arrow"
+                onclick="moveCarousel(-1)">
+            <i class="fa-solid fa-chevron-left"></i>
+        </button>
+
+
+        <div class="instagram-track-wrapper">
+
+            <div class="instagram-track"
+                 id="instagramTrack">
+
+
+                <a href="https://www.instagram.com/reel/Da79RFNsMhp/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="instagram-card">
+
+                    <img src="image1.jpeg"
+                         alt="Chandini Connects Reel 1">
+
+                    <div class="reel-icon">
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+
+                    <div class="instagram-overlay">
+
+                        <div class="play-button">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+
+                    </div>
+
+                    <div class="reel-label">
+                        Reel
+                    </div>
+
+                </a>
+
+
+                <a href="https://www.instagram.com/reel/DaX6BYlBbPw/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="instagram-card">
+
+                    <img src="image2.jpeg"
+                         alt="Chandini Connects Reel 2">
+
+                    <div class="reel-icon">
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+
+                    <div class="instagram-overlay">
+
+                        <div class="play-button">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+
+                    </div>
+
+                    <div class="reel-label">
+                        Reel
+                    </div>
+
+                </a>
+
+
+                <a href="https://www.instagram.com/reel/DZC74ujhQzl/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="instagram-card">
+
+                    <img src="image3.jpeg"
+                         alt="Chandini Connects Reel 3">
+
+                    <div class="reel-icon">
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+
+                    <div class="instagram-overlay">
+
+                        <div class="play-button">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+
+                    </div>
+
+                    <div class="reel-label">
+                        Reel
+                    </div>
+
+                </a>
+
+
+                <a href="https://www.instagram.com/reel/DaAu6b5t91I/"
+                   target="_blank"
+                   rel="noopener noreferrer"
+                   class="instagram-card">
+
+                    <img src="image4.jpeg"
+                         alt="Chandini Connects Reel 4">
+
+                    <div class="reel-icon">
+                        <i class="fa-brands fa-instagram"></i>
+                    </div>
+
+                    <div class="instagram-overlay">
+
+                        <div class="play-button">
+                            <i class="fa-solid fa-play"></i>
+                        </div>
+
+                    </div>
+
+                    <div class="reel-label">
+                        Reel
+                    </div>
+
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <button class="carousel-arrow"
+                onclick="moveCarousel(1)">
+            <i class="fa-solid fa-chevron-right"></i>
+        </button>
+
+    </div>
+
+
+    <div class="carousel-dots">
+
+        <button class="carousel-dot active"
+                onclick="goToSlide(0)">
+        </button>
+
+        <button class="carousel-dot"
+                onclick="goToSlide(1)">
+        </button>
+
+        <button class="carousel-dot"
+                onclick="goToSlide(2)">
+        </button>
+
+        <button class="carousel-dot"
+                onclick="goToSlide(3)">
+        </button>
+
+    </div>
+
+
+    <a href="https://www.instagram.com/chandini_connects/"
+       target="_blank"
+       rel="noopener noreferrer"
+       class="instagram-button">
+
+        <i class="fa-brands fa-instagram"></i>
+
+        Follow @chandini_connects
+
+    </a>
+
+</section>
+
+
+<section class="manifest" id="manifest">
+
+    <div class="manifest-grid">
+
+        <div>
+
+            <div class="section-small">
+                Manifest
+            </div>
+
+            <h2>
+                Think it.
+                Believe it.
+                Become it.
+            </h2>
+
+            <p>
+                Your thoughts influence your actions, and your
+                actions shape your next chapter. Create space
+                for the vision you want to grow into.
+            </p>
+
+        </div>
+
+
+        <div class="quote-box">
+
+            <i class="fa-solid fa-quote-left"></i>
+
+            <p>
+                You don't have to have it all figured out.
+                You just have to start.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="career" id="career">
+
+    <div class="career-inner">
+
+        <div class="career-content">
+
+            <div class="section-small">
+                Career Connect
+            </div>
+
+            <h2>
+                Your career deserves clarity.
+            </h2>
+
+            <p>
+                Whether you're beginning your journey,
+                exploring a new direction or preparing
+                for opportunities, take the next step
+                with intention.
+            </p>
+
+        </div>
+
+
+        <div class="career-points">
+
+            <div class="point">
+
+                <i class="fa-solid fa-magnifying-glass"></i>
+
+                <h3>
+                    Discover
+                </h3>
+
+                <p>
+                    Understand your interests,
+                    strengths and direction.
+                </p>
+
+            </div>
+
+
+            <div class="point">
+
+                <i class="fa-solid fa-briefcase"></i>
+
+                <h3>
+                    Prepare
+                </h3>
+
+                <p>
+                    Build skills, confidence and
+                    career-ready habits.
+                </p>
+
+            </div>
+
+
+            <div class="point">
+
+                <i class="fa-solid fa-link"></i>
+
+                <h3>
+                    Connect
+                </h3>
+
+                <p>
+                    Move closer to opportunities
+                    that match your goals.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="trackers" id="trackers">
+
+    <div class="trackers-inner">
+
+        <div class="tracker-content">
+
+            <div class="section-small">
+                Habit Trackers & Planners
+            </div>
+
+            <h2>
+                Small habits.
+                Better days.
+            </h2>
+
+            <p>
+                Progress doesn't always come from big changes.
+                Sometimes it comes from showing up for yourself
+                every day.
+            </p>
+
+        </div>
+
+
+        <div class="tracker-points">
+
+            <div class="point">
+
+                <i class="fa-solid fa-check"></i>
+
+                <h3>
+                    Habit Tracking
+                </h3>
+
+                <p>
+                    Make consistency visible and
+                    easier to maintain.
+                </p>
+
+            </div>
+
+
+            <div class="point">
+
+                <i class="fa-regular fa-calendar"></i>
+
+                <h3>
+                    Daily Planning
+                </h3>
+
+                <p>
+                    Organize your priorities and
+                    make your days intentional.
+                </p>
+
+            </div>
+
+
+            <div class="point">
+
+                <i class="fa-solid fa-bullseye"></i>
+
+                <h3>
+                    Goal Setting
+                </h3>
+
+                <p>
+                    Break bigger goals into
+                    meaningful actions.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="contact" id="contact">
+
+    <div class="section-small">
+        Let's Connect
+    </div>
+
+    <h2>
+        Your next chapter
+        starts here.
+    </h2>
+
+    <p>
+        Have a question, want to connect or simply want
+        to explore what comes next? Let's connect.
+    </p>
+
+    <a href="mailto:chandiniconnects@gmail.com"
+       class="instagram-button">
+
+        <i class="fa-regular fa-envelope"></i>
+
+        Email Me
+
+    </a>
+
+</section>
+
+
+<footer class="chandini-footer">
+
+    <div class="footer-art">
+
+        <img src="footer.webp"
+             alt="Chandini Connects">
+
+    </div>
+
+
+    <div class="footer-main">
+
+
+        <div class="footer-brand">
+
+            <h2>
+                Chandini
+            </h2>
+
+            <span>
+                CONNECTS
+            </span>
+
+            <p>
+                Learn with clarity.<br>
+                Grow with confidence.<br>
+                Create with purpose.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+
+            <div class="footer-link-group">
+
+                <span>
+                    EXPLORE
+                </span>
+
+                <a href="#top">
+                    About
+                </a>
+
+                <a href="#career">
+                    Work
+                </a>
+
+                <a href="#courses">
+                    Courses
+                </a>
+
+                <a href="#workshops">
+                    Workshops
+                </a>
+
+            </div>
+
+
+            <div class="footer-link-group">
+
+                <span>
+                    CONNECT
+                </span>
+
+                <a href="#contact">
+                    Contact
+                </a>
+
+                <a href="https://www.instagram.com/chandini_connects/"
+                   target="_blank">
+                    Instagram
+                </a>
+
+                <a href="#"
+                   target="_blank">
+                    YouTube
+                </a>
+
+                <a href="mailto:chandiniconnects@gmail.com">
+                    Email
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-connect">
+
+            <span>
+                LET'S CONNECT
+            </span>
+
+            <h3>
+                Let’s learn,<br>
+                grow & <em>create.</em>
+            </h3>
+
+
+            <div class="footer-socials">
+
+                <a href="https://www.instagram.com/chandini_connects/"
+                   target="_blank"
+                   aria-label="Instagram">
+
+                    <i class="fa-brands fa-instagram"></i>
+
+                </a>
+
+
+                <a href="#"
+                   target="_blank"
+                   aria-label="YouTube">
+
+                    <i class="fa-brands fa-youtube"></i>
+
+                </a>
+
+
+                <a href="#"
+                   target="_blank"
+                   aria-label="WhatsApp">
+
+                    <i class="fa-brands fa-whatsapp"></i>
+
+                </a>
+
+
+                <a href="mailto:chandiniconnects@gmail.com"
+                   aria-label="Email">
+
+                    <i class="fa-regular fa-envelope"></i>
+
+                </a>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        <span>
+            © 2026 CHANDINI CONNECTS
+        </span>
+
+        <span>
+            LEARN • GROW • CREATE • TOGETHER
+        </span>
+
+        <a href="#top">
+            BACK TO TOP ↑
+        </a>
+
+    </div>
+
+</footer>
+
+
+<script>
+
+    let currentSlide = 0;
+
+    const track =
+        document.getElementById("instagramTrack");
+
+    const dots =
+        document.querySelectorAll(".carousel-dot");
+
+
+    function getSlidesPerView() {
+
+        if (window.innerWidth <= 768) {
+            return 1;
+        }
+
+        if (window.innerWidth <= 900) {
+            return 2;
+        }
+
+        return 3;
+    }
+
+
+    function updateCarousel() {
+
+        const slidesPerView =
+            getSlidesPerView();
+
+        const cards =
+            track.querySelectorAll(".instagram-card");
+
+        if (!cards.length) {
+            return;
+        }
+
+        const cardWidth =
+            cards[0].offsetWidth;
+
+        const gap =
+            parseFloat(
+                getComputedStyle(track).gap
+            );
+
+        const slideWidth =
+            cardWidth + gap;
+
+        const maxSlide =
+            Math.max(
+                0,
+                cards.length - slidesPerView
+            );
+
+        if (currentSlide > maxSlide) {
+            currentSlide = 0;
+        }
+
+        track.style.transform =
+            "translateX(-" +
+            (currentSlide * slideWidth) +
+            "px)";
+
+
+        dots.forEach(function(dot, index) {
+
+            dot.classList.toggle(
+                "active",
+                index === currentSlide
+            );
+
+        });
+
+    }
+
+
+    function moveCarousel(direction) {
+
+        const slidesPerView =
+            getSlidesPerView();
+
+        const cards =
+            track.querySelectorAll(".instagram-card");
+
+        const maxSlide =
+            Math.max(
+                0,
+                cards.length - slidesPerView
+            );
+
+        currentSlide += direction;
+
+
+        if (currentSlide > maxSlide) {
+            currentSlide = 0;
+        }
+
+        if (currentSlide < 0) {
+            currentSlide = maxSlide;
+        }
+
+        updateCarousel();
+
+    }
+
+
+    function goToSlide(index) {
+
+        const slidesPerView =
+            getSlidesPerView();
+
+        const cards =
+            track.querySelectorAll(".instagram-card");
+
+        const maxSlide =
+            Math.max(
+                0,
+                cards.length - slidesPerView
+            );
+
+        currentSlide =
+            Math.min(
+                index,
+                maxSlide
+            );
+
+        updateCarousel();
+
+    }
+
+
+    window.addEventListener(
+        "resize",
+        updateCarousel
+    );
+
+
+    updateCarousel();
+
+
+    setInterval(function() {
+
+        moveCarousel(1);
+
+    }, 4500);
+
+</script>
+
+
+<script>
+
+    document.addEventListener(
+        "DOMContentLoaded",
+        function () {
+
+            const footer =
+                document.querySelector(
+                    ".chandini-footer"
+                );
+
+            if (!footer) {
+                return;
+            }
+
+
+            const footerObserver =
+                new IntersectionObserver(
+
+                    function (entries) {
+
+                        entries.forEach(
+                            function (entry) {
+
+                                if (entry.isIntersecting) {
+
+                                    footer.classList.add(
+                                        "footer-visible"
+                                    );
+
+                                    footerObserver.unobserve(
+                                        footer
+                                    );
+
+                                }
+
+                            }
+                        );
+
+                    },
+
+                    {
+                        threshold: 0.08
+                    }
+
+                );
+
+
+            footerObserver.observe(footer);
+
+        }
+    );
+
+</script>
+
+
+</body>
+
+</html>

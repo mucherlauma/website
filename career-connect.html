@@ -1,0 +1,2389 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Career Connect | Chandini Connects</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Vollkorn:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "DM Sans", sans-serif;
+            background: #fffaf7;
+            color: #3d243e;
+            overflow-x: hidden;
+        }
+
+        :root {
+            --purple: #5e3984;
+            --dark: #3d243e;
+            --light-purple: #eee4f2;
+            --cream: #fffaf7;
+            --rose: #ead5df;
+            --gold: #b99558;
+            --white: #ffffff;
+            --muted: #756675;
+        }
+
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        .container {
+            width: min(1120px, 90%);
+            margin: auto;
+        }
+
+        .section {
+            padding: 100px 0;
+        }
+
+        .eyebrow {
+            color: var(--purple);
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+
+        .section-heading {
+            max-width: 720px;
+            margin: auto auto 60px;
+            text-align: center;
+        }
+
+        .section-heading h2 {
+            font-family: "Vollkorn", serif;
+            font-size: clamp(40px, 5vw, 60px);
+            line-height: 1.05;
+            margin-bottom: 20px;
+        }
+
+        .section-heading p {
+            color: var(--muted);
+            line-height: 1.8;
+            font-size: 16px;
+        }
+
+
+        /* NAVBAR */
+
+        .fixed-header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: #e8d8e8;
+            border-bottom: 1px solid rgba(61, 36, 62, 0.08);
+        }
+
+        .navbar {
+            min-height: 92px;
+            max-width: 1250px;
+            margin: auto;
+            padding: 12px 28px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+        }
+
+        .brand {
+            display: flex;
+            flex-direction: column;
+            line-height: .82;
+            min-width: 190px;
+        }
+
+        .brand-main {
+            font-family: "Vollkorn", serif;
+            font-size: 47px;
+            font-weight: 600;
+            color: #5e3984;
+            letter-spacing: -2px;
+        }
+
+        .brand-sub {
+            display: block;
+            font-family: "Vollkorn", serif;
+            font-size: 25px;
+            font-weight: 500;
+            color: #3d243e;
+            margin-left: 52px;
+            margin-top: 8px;
+            letter-spacing: 1px;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        .nav-links a {
+            padding: 11px 15px;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: .3s ease;
+            white-space: nowrap;
+        }
+
+        .nav-links a:hover {
+            background: rgba(94, 57, 132, .09);
+            color: #5e3984;
+        }
+
+        .nav-links .nav-cta {
+            background: #5e3984;
+            color: white;
+            padding: 12px 19px;
+        }
+
+        .nav-links .nav-cta:hover {
+            background: #472766;
+            color: white;
+        }
+
+        .menu-btn {
+            display: none;
+            border: 0;
+            background: transparent;
+            font-size: 25px;
+            color: #5e3984;
+            cursor: pointer;
+        }
+
+
+        /* HERO */
+
+        .hero {
+            min-height: 100vh;
+            padding: 110px 0 90px;
+            display: flex;
+            align-items: center;
+            background:
+                radial-gradient(circle at 8% 20%, rgba(234, 213, 223, .65), transparent 28%),
+                radial-gradient(circle at 90% 80%, rgba(238, 228, 242, .9), transparent 32%),
+                var(--cream);
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1.05fr .95fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .hero-content {
+            max-width: 650px;
+        }
+
+        .hero-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 9px;
+            padding: 9px 17px;
+            background: var(--light-purple);
+            color: var(--purple);
+            border-radius: 30px;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 25px;
+        }
+
+        .hero-tag span {
+            width: 7px;
+            height: 7px;
+            background: var(--gold);
+            border-radius: 50%;
+        }
+
+        .hero h1 {
+            font-family: "Vollkorn", serif;
+            font-size: clamp(55px, 7vw, 84px);
+            line-height: .98;
+            font-weight: 600;
+            margin-bottom: 28px;
+        }
+
+        .hero h1 em {
+            color: var(--purple);
+            font-style: normal;
+        }
+
+        .hero-text {
+            max-width: 570px;
+            color: var(--muted);
+            font-size: 17px;
+            line-height: 1.85;
+            margin-bottom: 35px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+        }
+
+        .primary-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 25px;
+            background: var(--purple);
+            color: white;
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: .3s;
+        }
+
+        .primary-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 14px 30px rgba(94, 57, 132, .22);
+        }
+
+        .secondary-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 15px 25px;
+            border: 1px solid rgba(61, 36, 62, .17);
+            color: var(--dark);
+            border-radius: 30px;
+            font-size: 14px;
+            font-weight: 600;
+            transition: .3s;
+        }
+
+        .secondary-btn:hover {
+            background: white;
+        }
+
+
+        /* HERO VISUAL */
+
+        .career-visual {
+            width: 450px;
+            height: 500px;
+            margin: auto;
+            position: relative;
+        }
+
+        /* MAIN IMAGE - PERFECT CIRCLE */
+
+        .visual-main {
+            position: absolute;
+            width: 330px;
+            height: 330px;
+            right: 25px;
+            top: 55px;
+            border-radius: 50%;
+            overflow: hidden;
+            background: var(--rose);
+            box-shadow: 0 30px 70px rgba(61, 36, 62, .15);
+        }
+
+        .visual-main img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 50%;
+        }
+
+        .visual-circle {
+            position: absolute;
+            width: 125px;
+            height: 125px;
+            border-radius: 50%;
+            background: var(--light-purple);
+            left: 0;
+            top: 30px;
+        }
+
+        .visual-outline {
+            position: absolute;
+            width: 150px;
+            height: 150px;
+            border: 1px solid rgba(185, 149, 88, .6);
+            border-radius: 50%;
+            right: -5px;
+            bottom: 15px;
+        }
+
+        .career-badge {
+            position: absolute;
+            left: 0;
+            bottom: 65px;
+            background: white;
+            padding: 19px 22px;
+            border-radius: 20px;
+            box-shadow: 0 18px 40px rgba(61, 36, 62, .13);
+            z-index: 5;
+        }
+
+        .career-badge small {
+            display: block;
+            color: var(--gold);
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .career-badge strong {
+            font-family: "Vollkorn", serif;
+            font-size: 22px;
+        }
+
+
+        /* INTRO */
+
+        .intro {
+            background: white;
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: .9fr 1.1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .intro-card {
+            background: var(--light-purple);
+            border-radius: 35px;
+            padding: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .intro-card::before {
+            content: "";
+            position: absolute;
+            width: 170px;
+            height: 170px;
+            border-radius: 50%;
+            background: rgba(255,255,255,.45);
+            right: -70px;
+            top: -70px;
+        }
+
+        .intro-number {
+            font-family: "Vollkorn", serif;
+            color: var(--purple);
+            font-size: 80px;
+            line-height: 1;
+            margin-bottom: 15px;
+        }
+
+        .intro-card h3 {
+            font-family: "Vollkorn", serif;
+            font-size: 31px;
+            margin-bottom: 12px;
+        }
+
+        .intro-card p {
+            color: var(--muted);
+            line-height: 1.75;
+            font-size: 14px;
+        }
+
+        .intro-content h2 {
+            font-family: "Vollkorn", serif;
+            font-size: clamp(40px, 5vw, 60px);
+            line-height: 1.05;
+            margin-bottom: 25px;
+        }
+
+        .intro-content p {
+            color: var(--muted);
+            line-height: 1.9;
+            font-size: 16px;
+            margin-bottom: 17px;
+        }
+
+
+        /* SERVICES */
+
+        .services {
+            background: var(--cream);
+        }
+
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 34px 28px;
+            border-radius: 26px;
+            border: 1px solid rgba(61, 36, 62, .06);
+            transition: .35s;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 22px 45px rgba(61, 36, 62, .09);
+        }
+
+        .service-icon {
+            width: 55px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--light-purple);
+            color: var(--purple);
+            border-radius: 17px;
+            font-size: 22px;
+            margin-bottom: 24px;
+        }
+
+        .service-card:nth-child(2) .service-icon {
+            background: #f3e5e9;
+        }
+
+        .service-card:nth-child(3) .service-icon {
+            background: #f5eee2;
+        }
+
+        .service-card:nth-child(4) .service-icon {
+            background: #ead5df;
+        }
+
+        .service-card:nth-child(5) .service-icon {
+            background: #eee4f2;
+        }
+
+        .service-card:nth-child(6) .service-icon {
+            background: #f3e5e9;
+        }
+
+        .service-card h3 {
+            font-family: "Vollkorn", serif;
+            font-size: 26px;
+            margin-bottom: 12px;
+        }
+
+        .service-card p {
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.75;
+        }
+
+
+        /* PROCESS */
+
+        .process {
+            background: white;
+        }
+
+        .process-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+
+        .process-card {
+            position: relative;
+            padding: 30px 25px;
+            border: 1px solid rgba(61, 36, 62, .09);
+            border-radius: 25px;
+            background: #fff;
+        }
+
+        .process-number {
+            color: var(--purple);
+            font-family: "Vollkorn", serif;
+            font-size: 19px;
+            font-weight: 700;
+            margin-bottom: 28px;
+        }
+
+        .process-card h3 {
+            font-family: "Vollkorn", serif;
+            font-size: 25px;
+            margin-bottom: 10px;
+        }
+
+        .process-card p {
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        .process-line {
+            position: absolute;
+            top: 43px;
+            right: -18px;
+            width: 18px;
+            height: 1px;
+            background: rgba(94,57,132,.2);
+        }
+
+        .process-card:last-child .process-line {
+            display: none;
+        }
+
+
+        /* WHO */
+
+        .who {
+            background: var(--dark);
+            color: white;
+        }
+
+        .who .eyebrow {
+            color: #d7b978;
+        }
+
+        .who .section-heading p {
+            color: #cfc2d0;
+        }
+
+        .who-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+            max-width: 850px;
+            margin: auto;
+        }
+
+        .who-item {
+            padding: 22px 24px;
+            background: rgba(255,255,255,.055);
+            border: 1px solid rgba(255,255,255,.08);
+            border-radius: 20px;
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .who-check {
+            width: 27px;
+            height: 27px;
+            flex-shrink: 0;
+            border-radius: 50%;
+            background: rgba(255,255,255,.1);
+            color: #d7b978;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+        }
+
+        .who-item p {
+            color: #ddd3df;
+            line-height: 1.65;
+            font-size: 14px;
+        }
+
+
+        /* OUTCOME */
+
+        .outcome {
+            background: var(--light-purple);
+        }
+
+        .outcome-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+        }
+
+        .outcome-card {
+            background: white;
+            border-radius: 28px;
+            padding: 35px 30px;
+            text-align: center;
+        }
+
+        .outcome-card strong {
+            display: block;
+            font-family: "Vollkorn", serif;
+            font-size: 31px;
+            margin-bottom: 10px;
+        }
+
+        .outcome-card p {
+            color: var(--muted);
+            font-size: 14px;
+            line-height: 1.7;
+        }
+
+
+        /* CTA */
+
+        .career-cta {
+            padding: 110px 0;
+            text-align: center;
+            background:
+                radial-gradient(circle at 20% 30%, rgba(234,213,223,.75), transparent 25%),
+                radial-gradient(circle at 85% 70%, rgba(238,228,242,.9), transparent 30%),
+                var(--cream);
+        }
+
+        .career-cta h2 {
+            max-width: 800px;
+            margin: auto auto 22px;
+            font-family: "Vollkorn", serif;
+            font-size: clamp(45px, 6vw, 72px);
+            line-height: 1.03;
+        }
+
+        .career-cta h2 em {
+            color: var(--purple);
+            font-style: normal;
+        }
+
+        .career-cta p {
+            max-width: 600px;
+            margin: auto auto 32px;
+            color: var(--muted);
+            line-height: 1.8;
+        }
+
+
+        /* CHANDINI CONNECTS FOOTER */
+
+        .chandini-footer {
+            position: relative;
+            width: 100% !important;
+            max-width: none !important;
+            margin: 0 !important;
+            padding: 0;
+            overflow: hidden;
+            background: #000;
+            color: #fff;
+            box-sizing: border-box;
+        }
+
+        .footer-art {
+            width: 100%;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            line-height: 0;
+            background: #f7f7f4;
+        }
+
+        .footer-art img {
+            display: block;
+            width: 100%;
+            height: auto;
+            margin: 0;
+            object-fit: contain;
+            object-position: center bottom;
+        }
+
+        .footer-main {
+            width: 100%;
+            margin: 0;
+            padding:
+                60px
+                max(35px, calc((100% - 1180px) / 2));
+            display: grid;
+            grid-template-columns:
+                1.15fr
+                1fr
+                1fr;
+            align-items: start;
+            gap: 70px;
+            background: #000;
+            border-top:
+                1px solid rgba(255,255,255,.15);
+            box-sizing: border-box;
+        }
+
+        .footer-brand h2 {
+            margin: 0;
+            font-family: "Bodoni Moda", serif;
+            font-size: 55px;
+            font-weight: 400;
+            line-height: .9;
+            letter-spacing: -2px;
+            color: #fff;
+        }
+
+        .footer-brand > span {
+            display: block;
+            margin-top: 13px;
+            font-family: Arial, sans-serif;
+            font-size: 8px;
+            font-weight: 500;
+            letter-spacing: 7px;
+            color: #fff;
+        }
+
+        .footer-brand p {
+            margin: 28px 0 0;
+            font-family: Arial, sans-serif;
+            font-size: 11px;
+            line-height: 1.8;
+            color: rgba(255,255,255,.65);
+        }
+
+        .footer-links {
+            display: grid;
+            grid-template-columns:
+                1fr 1fr;
+            gap: 40px;
+        }
+
+        .footer-link-group {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 12px;
+        }
+
+        .footer-link-group > span,
+        .footer-connect > span {
+            display: block;
+            margin-bottom: 10px;
+            font-family: Arial, sans-serif;
+            font-size: 7px;
+            font-weight: 600;
+            letter-spacing: 3px;
+            color: rgba(255,255,255,.45);
+        }
+
+        .footer-link-group a {
+            display: inline-block;
+            font-family: "Bodoni Moda", serif;
+            font-size: 14px;
+            font-weight: 400;
+            color: #fff;
+            text-decoration: none;
+            transition:
+                transform .3s ease,
+                opacity .3s ease;
+        }
+
+        .footer-link-group a:hover {
+            transform: translateX(4px);
+            opacity: .55;
+        }
+
+        .footer-connect h3 {
+            margin: 0 0 27px;
+            font-family: "Bodoni Moda", serif;
+            font-size: clamp(31px, 3vw, 45px);
+            font-weight: 400;
+            line-height: 1;
+            letter-spacing: -1px;
+            color: #fff;
+        }
+
+        .footer-connect h3 em {
+            color: #fff;
+            font-weight: 400;
+        }
+
+        .footer-socials {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .footer-socials a {
+            width: 39px;
+            height: 39px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border:
+                1px solid rgba(255,255,255,.35);
+            border-radius: 50%;
+            background: transparent;
+            color: #fff;
+            text-decoration: none;
+            font-size: 14px;
+            transition:
+                transform .3s ease,
+                background .3s ease,
+                color .3s ease;
+        }
+
+        .footer-socials a i {
+            color: inherit;
+        }
+
+        .footer-socials a:hover {
+            transform: translateY(-4px);
+            background: #fff;
+            color: #000;
+        }
+
+        .footer-bottom {
+            width: 100%;
+            min-height: 68px;
+            padding:
+                0
+                max(35px, calc((100% - 1180px) / 2));
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 25px;
+            background: #000;
+            border-top:
+                1px solid rgba(255,255,255,.15);
+            box-sizing: border-box;
+        }
+
+        .footer-bottom span,
+        .footer-bottom a {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            font-size: 7px;
+            font-weight: 500;
+            letter-spacing: 2px;
+            color: rgba(255,255,255,.65);
+            text-decoration: none;
+        }
+
+        .footer-bottom a {
+            transition: color .25s ease;
+        }
+
+        .footer-bottom a:hover {
+            color: #fff;
+        }
+
+        .footer-brand,
+        .footer-links,
+        .footer-connect {
+            opacity: 0;
+            transform: translateY(22px);
+            transition:
+                opacity .8s cubic-bezier(.22,1,.36,1),
+                transform .8s cubic-bezier(.22,1,.36,1);
+        }
+
+        .chandini-footer.footer-visible .footer-brand {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: .05s;
+        }
+
+        .chandini-footer.footer-visible .footer-links {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: .17s;
+        }
+
+        .chandini-footer.footer-visible .footer-connect {
+            opacity: 1;
+            transform: translateY(0);
+            transition-delay: .29s;
+        }
+
+
+        /* ANIMATION */
+
+        .reveal {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: .8s ease;
+        }
+
+        .reveal.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+
+        /* RESPONSIVE */
+
+        @media(max-width: 1000px) {
+
+            .navbar {
+                padding-left: 22px;
+                padding-right: 22px;
+            }
+
+            .nav-links {
+                gap: 3px;
+            }
+
+            .nav-links a {
+                font-size: 12px;
+                padding: 10px 11px;
+            }
+
+            .nav-links .nav-cta {
+                padding: 11px 16px;
+            }
+
+            .hero-grid {
+                gap: 40px;
+            }
+
+            .career-visual {
+                transform: scale(.9);
+            }
+
+            .service-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .process-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .process-line {
+                display: none;
+            }
+
+            .footer-main {
+                padding: 50px 35px;
+                grid-template-columns: 1fr 1fr;
+                gap: 45px;
+            }
+
+            .footer-connect {
+                grid-column: 1 / -1;
+            }
+
+            .footer-bottom {
+                padding: 0 35px;
+            }
+        }
+
+
+        @media(max-width: 850px) {
+
+            .fixed-header {
+                position: sticky;
+            }
+
+            .navbar {
+                min-height: 78px;
+                padding: 10px 18px;
+            }
+
+            .brand {
+                min-width: auto;
+            }
+
+            .brand-main {
+                font-size: 38px;
+            }
+
+            .brand-sub {
+                font-size: 20px;
+                margin-left: 42px;
+                margin-top: 6px;
+            }
+
+            .menu-btn {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .nav-links {
+                position: absolute;
+                top: 78px;
+                left: 15px;
+                right: 15px;
+                display: none;
+                flex-direction: column;
+                align-items: stretch;
+                padding: 12px;
+                background: #fffaf7;
+                border: 1px solid rgba(61, 36, 62, .1);
+                border-radius: 18px;
+                box-shadow: 0 18px 40px rgba(61, 36, 62, .12);
+            }
+
+            .nav-links.active {
+                display: flex;
+            }
+
+            .nav-links a {
+                width: 100%;
+                text-align: center;
+                padding: 13px;
+                font-size: 14px;
+            }
+
+            .nav-links .nav-cta {
+                margin-top: 4px;
+            }
+
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-content {
+                margin: auto;
+            }
+
+            .hero-text {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+            }
+
+            .intro-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .outcome-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+
+        @media(max-width: 768px) {
+
+            .chandini-footer {
+                width: 100% !important;
+                margin: 0 !important;
+                background: #000;
+            }
+
+            .footer-art {
+                width: 100%;
+                height: 220px;
+            }
+
+            .footer-art img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                object-position: center center;
+            }
+
+            .footer-main {
+                padding:
+                    43px 20px
+                    45px;
+                grid-template-columns: 1fr;
+                gap: 42px;
+                background: #000;
+            }
+
+            .footer-brand h2 {
+                font-size: 45px;
+            }
+
+            .footer-brand > span {
+                margin-top: 11px;
+                font-size: 7px;
+                letter-spacing: 6px;
+            }
+
+            .footer-brand p {
+                margin-top: 21px;
+                font-size: 10px;
+            }
+
+            .footer-links {
+                grid-template-columns: 1fr 1fr;
+                gap: 25px;
+            }
+
+            .footer-link-group a {
+                font-size: 13px;
+            }
+
+            .footer-connect h3 {
+                max-width: 280px;
+                font-size: 35px;
+            }
+
+            .footer-socials a {
+                width: 37px;
+                height: 37px;
+                font-size: 13px;
+            }
+
+            .footer-bottom {
+                min-height: auto;
+                padding:
+                    24px 20px
+                    100px;
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 11px;
+                background: #000;
+            }
+
+            .footer-bottom span,
+            .footer-bottom a {
+                font-size: 6.5px;
+                letter-spacing: 1.6px;
+            }
+        }
+
+
+        @media(max-width: 600px) {
+
+            .section {
+                padding: 75px 0;
+            }
+
+            .navbar {
+                min-height: 70px;
+                padding: 8px 15px;
+            }
+
+            .brand-main {
+                font-size: 32px;
+            }
+
+            .brand-sub {
+                font-size: 17px;
+                margin-left: 35px;
+                margin-top: 5px;
+            }
+
+            .menu-btn {
+                font-size: 22px;
+            }
+
+            .nav-links {
+                top: 70px;
+                left: 10px;
+                right: 10px;
+            }
+
+            .hero {
+                padding: 90px 0 70px;
+            }
+
+            .hero h1 {
+                font-size: 53px;
+            }
+
+            .career-visual {
+                width: 320px;
+                height: 380px;
+                transform: none;
+            }
+
+            /* MOBILE PERFECT CIRCLE */
+
+            .visual-main {
+                width: 250px;
+                height: 250px;
+                right: 20px;
+                top: 55px;
+                border-radius: 50%;
+            }
+
+            .visual-main img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                border-radius: 50%;
+            }
+
+            .visual-circle {
+                width: 85px;
+                height: 85px;
+                left: 0;
+            }
+
+            .visual-outline {
+                width: 105px;
+                height: 105px;
+                right: -5px;
+                bottom: 5px;
+            }
+
+            .career-badge {
+                left: 0;
+                bottom: 35px;
+                padding: 15px 17px;
+            }
+
+            .career-badge strong {
+                font-size: 18px;
+            }
+
+            .service-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .who-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .intro-card {
+                padding: 35px;
+            }
+
+            .intro-number {
+                font-size: 65px;
+            }
+        }
+
+
+        @media(max-width: 390px) {
+
+            .footer-art {
+                height: 195px;
+            }
+
+            .footer-main {
+                padding-left: 16px;
+                padding-right: 16px;
+            }
+
+            .footer-brand h2 {
+                font-size: 41px;
+            }
+
+            .footer-connect h3 {
+                font-size: 32px;
+            }
+
+            .footer-bottom {
+                padding-left: 16px;
+                padding-right: 16px;
+                padding-bottom: 95px;
+            }
+        }
+
+    </style>
+
+</head>
+
+
+<body id="top">
+
+
+    <header class="fixed-header">
+
+        <nav class="navbar">
+
+            <a href="index.html" class="brand">
+
+                <span class="brand-main">
+                    Chandini
+                </span>
+
+                <span class="brand-sub">
+                    Connects
+                </span>
+
+            </a>
+
+
+            <button class="menu-btn"
+                    id="menuBtn"
+                    onclick="toggleMenu()"
+                    aria-label="Open menu">
+                ☰
+            </button>
+
+
+            <div class="nav-links">
+                <a href="manifest.html">Manifest With Chandini</a>
+                <a href="career-connect.html">Career Connect</a>
+                <a href="habit-planners.html">Habit Trackers & Planners</a>
+                <a href="#contact" class="nav-cta">Contact Me</a>
+            </div>
+
+        </nav>
+
+    </header>
+
+
+    <main>
+
+
+        <section class="hero">
+
+            <div class="container hero-grid">
+
+
+                <div class="hero-content reveal">
+
+                    <div class="hero-tag">
+
+                        <span></span>
+
+                        Career Clarity • Growth • Confidence
+
+                    </div>
+
+
+                    <h1>
+
+                        Your career deserves
+
+                        <em>
+                            direction.
+                        </em>
+
+                    </h1>
+
+
+                    <p class="hero-text">
+
+                        Stop feeling confused about what comes next.
+
+                        Get clear on your strengths, build the right skills,
+
+                        and move towards a career that actually feels right for you.
+
+                    </p>
+
+
+                    <div class="hero-buttons">
+
+                        <a href="#connect" class="primary-btn">
+                            Start Your Career Journey
+                        </a>
+
+                        <a href="#services" class="secondary-btn">
+                            Explore Support
+                        </a>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="career-visual reveal">
+
+                    <div class="visual-circle"></div>
+
+
+                    <div class="visual-main">
+
+                        <img
+                            src="C:\Users\muche\OneDrive\Desktop\folder\career.png"
+                            alt="Career growth">
+
+                    </div>
+
+
+                    <div class="visual-outline"></div>
+
+
+                    <div class="career-badge">
+
+                        <small>
+                            Your next chapter
+                        </small>
+
+                        <strong>
+                            Starts with clarity.
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <section class="section intro">
+
+            <div class="container intro-grid">
+
+
+                <div class="intro-card reveal">
+
+                    <div class="intro-number">
+                        01
+                    </div>
+
+                    <h3>
+                        Clarity before action.
+                    </h3>
+
+                    <p>
+
+                        Before choosing another course, applying
+
+                        everywhere or comparing yourself with others,
+
+                        understand where you actually want to go.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="intro-content reveal">
+
+                    <div class="eyebrow">
+                        Career Connect
+                    </div>
+
+                    <h2>
+                        You don't need to have everything figured out.
+                    </h2>
+
+                    <p>
+
+                        Your career journey can feel overwhelming.
+
+                        There are endless courses, technologies,
+
+                        job roles and opinions telling you what you
+
+                        should do.
+
+                    </p>
+
+                    <p>
+
+                        Career Connect gives you a structured space
+
+                        to understand yourself, identify the right
+
+                        direction and turn uncertainty into an
+
+                        actionable plan.
+
+                    </p>
+
+                    <a href="#services" class="primary-btn">
+                        See How It Works
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <section class="section services" id="services">
+
+            <div class="container">
+
+
+                <div class="section-heading reveal">
+
+                    <div class="eyebrow">
+                        What we can work on
+                    </div>
+
+                    <h2>
+                        Support for every stage of your career journey.
+                    </h2>
+
+                    <p>
+
+                        Whether you are choosing a direction,
+
+                        preparing for opportunities or trying to
+
+                        grow with more confidence, start from where you are.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="service-grid">
+
+
+                    <div class="service-card reveal">
+
+                        <div class="service-icon">
+                            ✦
+                        </div>
+
+                        <h3>
+                            Career Clarity
+                        </h3>
+
+                        <p>
+
+                            Understand your interests, strengths and
+
+                            possible career paths so you can make
+
+                            decisions with more confidence.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="service-card reveal">
+
+                        <div class="service-icon">
+                            ◎
+                        </div>
+
+                        <h3>
+                            Resume Review
+                        </h3>
+
+                        <p>
+
+                            Improve your resume structure, content
+
+                            and positioning so your profile communicates
+
+                            your strengths clearly.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="service-card reveal">
+
+                        <div class="service-icon">
+                            ♢
+                        </div>
+
+                        <h3>
+                            Skill Roadmap
+                        </h3>
+
+                        <p>
+
+                            Identify the skills you need and create
+
+                            a practical learning path instead of
+
+                            randomly collecting courses.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="service-card reveal">
+
+                        <div class="service-icon">
+                            ↗
+                        </div>
+
+                        <h3>
+                            Interview Prep
+                        </h3>
+
+                        <p>
+
+                            Prepare for interviews with better answers,
+
+                            stronger communication and more confidence.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="service-card reveal">
+
+                        <div class="service-icon">
+                            ◌
+                        </div>
+
+                        <h3>
+                            LinkedIn Profile
+                        </h3>
+
+                        <p>
+
+                            Build a professional online presence that
+
+                            represents your skills, experience and
+
+                            career direction.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="service-card reveal">
+
+                        <div class="service-icon">
+                            ✧
+                        </div>
+
+                        <h3>
+                            Career Mentoring
+                        </h3>
+
+                        <p>
+
+                            Get thoughtful guidance, practical next
+
+                            steps and accountability while you navigate
+
+                            your career journey.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <section class="section process">
+
+            <div class="container">
+
+
+                <div class="section-heading reveal">
+
+                    <div class="eyebrow">
+                        The process
+                    </div>
+
+                    <h2>
+                        From confusion to a clear next step.
+                    </h2>
+
+                    <p>
+
+                        A simple process designed to help you move
+
+                        forward without feeling overwhelmed.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="process-grid">
+
+
+                    <div class="process-card reveal">
+
+                        <div class="process-number">
+                            01
+                        </div>
+
+                        <h3>
+                            Understand
+                        </h3>
+
+                        <p>
+
+                            We look at where you are,
+
+                            what you want and what is currently
+
+                            keeping you stuck.
+
+                        </p>
+
+                        <div class="process-line"></div>
+
+                    </div>
+
+
+
+                    <div class="process-card reveal">
+
+                        <div class="process-number">
+                            02
+                        </div>
+
+                        <h3>
+                            Discover
+                        </h3>
+
+                        <p>
+
+                            Identify your strengths, interests,
+
+                            skills and career possibilities.
+
+                        </p>
+
+                        <div class="process-line"></div>
+
+                    </div>
+
+
+
+                    <div class="process-card reveal">
+
+                        <div class="process-number">
+                            03
+                        </div>
+
+                        <h3>
+                            Plan
+                        </h3>
+
+                        <p>
+
+                            Create a practical roadmap with
+
+                            clear priorities and achievable actions.
+
+                        </p>
+
+                        <div class="process-line"></div>
+
+                    </div>
+
+
+
+                    <div class="process-card reveal">
+
+                        <div class="process-number">
+                            04
+                        </div>
+
+                        <h3>
+                            Move
+                        </h3>
+
+                        <p>
+
+                            Take consistent action and build
+
+                            confidence through progress.
+
+                        </p>
+
+                        <div class="process-line"></div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <section class="section who">
+
+            <div class="container">
+
+
+                <div class="section-heading reveal">
+
+                    <div class="eyebrow">
+                        Is this for you?
+                    </div>
+
+                    <h2>
+                        You might be ready for Career Connect if...
+                    </h2>
+
+                    <p>
+
+                        You don't need to be at a particular stage.
+
+                        You just need to be ready to move forward.
+
+                    </p>
+
+                </div>
+
+
+
+                <div class="who-grid">
+
+
+                    <div class="who-item reveal">
+
+                        <div class="who-check">
+                            ✓
+                        </div>
+
+                        <p>
+                            You are confused about which career path to choose.
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="who-item reveal">
+
+                        <div class="who-check">
+                            ✓
+                        </div>
+
+                        <p>
+                            You are learning many things but don't know what to focus on.
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="who-item reveal">
+
+                        <div class="who-check">
+                            ✓
+                        </div>
+
+                        <p>
+                            You want your resume to look more professional.
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="who-item reveal">
+
+                        <div class="who-check">
+                            ✓
+                        </div>
+
+                        <p>
+                            You are preparing for placements or your first job.
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="who-item reveal">
+
+                        <div class="who-check">
+                            ✓
+                        </div>
+
+                        <p>
+                            You want to improve your interview confidence.
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="who-item reveal">
+
+                        <div class="who-check">
+                            ✓
+                        </div>
+
+                        <p>
+                            You know you can do more but need a clearer plan.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <section class="section outcome">
+
+            <div class="container">
+
+
+                <div class="section-heading reveal">
+
+                    <div class="eyebrow">
+                        What you can walk away with
+                    </div>
+
+                    <h2>
+                        More than advice. A direction.
+                    </h2>
+
+                </div>
+
+
+
+                <div class="outcome-grid">
+
+
+                    <div class="outcome-card reveal">
+
+                        <strong>
+                            Clear Direction
+                        </strong>
+
+                        <p>
+
+                            Know what deserves your attention
+
+                            and what your next move should be.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="outcome-card reveal">
+
+                        <strong>
+                            Practical Roadmap
+                        </strong>
+
+                        <p>
+
+                            Have a realistic plan for building
+
+                            skills and moving towards your goals.
+
+                        </p>
+
+                    </div>
+
+
+
+                    <div class="outcome-card reveal">
+
+                        <strong>
+                            More Confidence
+                        </strong>
+
+                        <p>
+
+                            Make career decisions with greater
+
+                            clarity and trust in yourself.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <section class="career-cta" id="connect">
+
+            <div class="container">
+
+                <div class="eyebrow">
+                    Your career. Your next chapter.
+                </div>
+
+                <h2>
+
+                    You don't need to know
+
+                    <em>
+                        everything.
+                    </em>
+
+                    You just need to know what comes next.
+
+                </h2>
+
+                <p>
+
+                    Let's turn your questions into clarity,
+
+                    your goals into a plan and your plan into action.
+
+                </p>
+
+                <a
+                    href="https://www.instagram.com/chandini_connects/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="primary-btn">
+
+                    Connect With Me
+
+                </a>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- CHANDINI CONNECTS FOOTER -->
+
+    <footer class="chandini-footer">
+
+
+        <div class="footer-art">
+
+            <img src="footer.webp" alt="Chandini Connects">
+
+        </div>
+
+
+
+        <div class="footer-main">
+
+
+            <div class="footer-brand">
+
+                <h2>
+                    Chandini
+                </h2>
+
+                <span>
+                    CONNECTS
+                </span>
+
+                <p>
+                    Learn with clarity.<br>
+                    Grow with confidence.<br>
+                    Create with purpose.
+                </p>
+
+            </div>
+
+
+
+            <div class="footer-links">
+
+
+                <div class="footer-link-group">
+
+                    <span>
+                        EXPLORE
+                    </span>
+
+                    <a href="#about">
+                        About
+                    </a>
+
+                    <a href="#work">
+                        Work
+                    </a>
+
+                    <a href="#courses">
+                        Courses
+                    </a>
+
+                    <a href="#workshops">
+                        Workshops
+                    </a>
+
+                </div>
+
+
+
+                <div class="footer-link-group">
+
+                    <span>
+                        CONNECT
+                    </span>
+
+                    <a href="#contact">
+                        Contact
+                    </a>
+
+                    <a
+                        href="https://www.instagram.com/chandini_connects/"
+                        target="_blank"
+                        rel="noopener noreferrer">
+
+                        Instagram
+
+                    </a>
+
+                    <a href="#" target="_blank">
+                        YouTube
+                    </a>
+
+                    <a href="#" target="_blank">
+                        WhatsApp
+                    </a>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="footer-connect">
+
+                <span>
+                    LET'S CONNECT
+                </span>
+
+                <h3>
+
+                    Let’s learn,<br>
+
+                    grow & <em>create.</em>
+
+                </h3>
+
+
+
+                <div class="footer-socials">
+
+
+                    <a
+                        href="https://www.instagram.com/chandini_connects/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        aria-label="Instagram">
+
+                        <i class="fa-brands fa-instagram"></i>
+
+                    </a>
+
+
+
+                    <a
+                        href="#"
+                        target="_blank"
+                        aria-label="YouTube">
+
+                        <i class="fa-brands fa-youtube"></i>
+
+                    </a>
+
+
+
+                    <a
+                        href="#"
+                        target="_blank"
+                        aria-label="WhatsApp">
+
+                        <i class="fa-brands fa-whatsapp"></i>
+
+                    </a>
+
+
+
+                    <a
+                        href="mailto:chandiniconnects@gmail.com"
+                        aria-label="Email">
+
+                        <i class="fa-regular fa-envelope"></i>
+
+                    </a>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="footer-bottom">
+
+            <span>
+                © 2026 CHANDINI CONNECTS
+            </span>
+
+            <span>
+                LEARN • GROW • CREATE • TOGETHER
+            </span>
+
+            <a href="#top">
+                BACK TO TOP ↑
+            </a>
+
+        </div>
+
+    </footer>
+
+
+
+    <script>
+
+        function toggleMenu() {
+
+            const navLinks =
+                document.getElementById("navLinks");
+
+            const menuBtn =
+                document.getElementById("menuBtn");
+
+            navLinks.classList.toggle("active");
+
+            if (navLinks.classList.contains("active")) {
+
+                menuBtn.innerHTML = "✕";
+
+            } else {
+
+                menuBtn.innerHTML = "☰";
+
+            }
+
+        }
+
+
+
+        const revealElements =
+            document.querySelectorAll(".reveal");
+
+
+        const observer =
+            new IntersectionObserver(
+
+                entries => {
+
+                    entries.forEach(entry => {
+
+                        if (entry.isIntersecting) {
+
+                            entry.target.classList.add("active");
+
+                        }
+
+                    });
+
+                },
+
+                {
+                    threshold: 0.12
+                }
+
+            );
+
+
+        revealElements.forEach(element => {
+
+            observer.observe(element);
+
+        });
+
+
+
+        document
+            .querySelectorAll(".nav-links a")
+            .forEach(link => {
+
+                link.addEventListener("click", () => {
+
+                    const navLinks =
+                        document.getElementById("navLinks");
+
+                    const menuBtn =
+                        document.getElementById("menuBtn");
+
+                    navLinks.classList.remove("active");
+
+                    menuBtn.innerHTML = "☰";
+
+                });
+
+            });
+
+
+
+        document.addEventListener(
+            "DOMContentLoaded",
+            function () {
+
+                const footer =
+                    document.querySelector(".chandini-footer");
+
+                if (!footer) return;
+
+                const footerObserver =
+                    new IntersectionObserver(
+
+                        function (entries) {
+
+                            entries.forEach(function (entry) {
+
+                                if (entry.isIntersecting) {
+
+                                    footer.classList.add(
+                                        "footer-visible"
+                                    );
+
+                                    footerObserver.unobserve(
+                                        footer
+                                    );
+
+                                }
+
+                            });
+
+                        },
+
+                        {
+                            threshold: 0.08
+                        }
+
+                    );
+
+                footerObserver.observe(footer);
+
+            }
+        );
+
+    </script>
+
+</body>
+
+</html>
