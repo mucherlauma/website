@@ -1,2345 +1,2605 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Habit Trackers & Planners | Chandini Connects</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<title>Habit Trackers & Planners | Chandini Connects</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Vollkorn:wght@500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&family=Vollkorn:wght@500;600;700&display=swap" rel="stylesheet">
 
-    <style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    html {
+        scroll-behavior: smooth;
+    }
+
+    body {
+        font-family: "DM Sans", sans-serif;
+        background: #fffaf7;
+        color: #3d243e;
+        overflow-x: hidden;
+    }
+
+    :root {
+        --purple: #5e3984;
+        --dark: #3d243e;
+        --light-purple: #eee4f2;
+        --cream: #fffaf7;
+        --rose: #ead5df;
+        --gold: #b99558;
+        --white: #ffffff;
+        --muted: #756675;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    img {
+        width: 100%;
+        display: block;
+    }
+
+    .container {
+        width: min(1120px, 90%);
+        margin: auto;
+    }
+
+    .section {
+        padding: 100px 0;
+    }
+
+    .eyebrow {
+        color: var(--purple);
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        margin-bottom: 15px;
+    }
+
+    .section-heading {
+        max-width: 720px;
+        margin: auto auto 60px;
+        text-align: center;
+    }
+
+    .section-heading h2 {
+        font-family: "Vollkorn", serif;
+        font-size: clamp(40px, 5vw, 60px);
+        line-height: 1.05;
+        margin-bottom: 20px;
+    }
+
+    .section-heading p {
+        color: var(--muted);
+        line-height: 1.8;
+        font-size: 16px;
+    }
+
+
+    /* NAVBAR */
+
+    .fixed-header {
+        position: sticky;
+        top: 0;
+        z-index: 1000;
+        background: #e8d8e8;
+        border-bottom: 1px solid rgba(61, 36, 62, 0.08);
+    }
+
+    .navbar {
+        min-height: 92px;
+        max-width: 1250px;
+        margin: auto;
+        padding: 12px 28px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 25px;
+    }
+
+    .brand {
+        display: flex;
+        flex-direction: column;
+        line-height: .9;
+        min-width: 190px;
+    }
+
+    .brand-main {
+        font-family: "Vollkorn", serif;
+        font-size: 48px;
+        font-weight: 600;
+        color: #5e3984;
+        letter-spacing: -2px;
+    }
+
+    .brand-sub {
+        font-family: "Vollkorn", serif;
+        font-size: 25px;
+        font-weight: 500;
+        color: #3d243e;
+        margin-left: 52px;
+        margin-top: 7px;
+        letter-spacing: 1px;
+    }
+
+    .nav-links {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+
+    .nav-links a {
+        padding: 11px 15px;
+        border-radius: 30px;
+        font-size: 14px;
+        font-weight: 600;
+        transition: .3s;
+    }
+
+    .nav-links a:hover {
+        background: rgba(94, 57, 132, .09);
+        color: #5e3984;
+    }
+
+    .nav-links .nav-cta {
+        background: #5e3984;
+        color: white;
+        padding: 12px 19px;
+    }
+
+    .nav-links .nav-cta:hover {
+        background: #472766;
+        color: white;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        min-height: 100vh;
+        padding: 100px 0 90px;
+        display: flex;
+        align-items: center;
+        background:
+            radial-gradient(circle at 10% 15%, rgba(234, 213, 223, .7), transparent 27%),
+            radial-gradient(circle at 90% 80%, rgba(238, 228, 242, .9), transparent 32%),
+            var(--cream);
+    }
+
+    .hero-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 75px;
+        align-items: center;
+    }
+
+    .hero-content {
+        max-width: 620px;
+    }
+
+    .hero-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 9px;
+        padding: 9px 17px;
+        background: var(--light-purple);
+        color: var(--purple);
+        border-radius: 30px;
+        font-size: 12px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        margin-bottom: 25px;
+    }
+
+    .hero-tag span {
+        width: 7px;
+        height: 7px;
+        background: var(--gold);
+        border-radius: 50%;
+    }
+
+    .hero h1 {
+        font-family: "Vollkorn", serif;
+        font-size: clamp(54px, 7vw, 82px);
+        line-height: .98;
+        font-weight: 600;
+        margin-bottom: 28px;
+    }
+
+    .hero h1 em {
+        color: var(--purple);
+        font-style: normal;
+    }
+
+    .hero-text {
+        max-width: 540px;
+        color: var(--muted);
+        font-size: 17px;
+        line-height: 1.85;
+        margin-bottom: 35px;
+    }
+
+    .hero-buttons {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+    }
+
+    .primary-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px 25px;
+        background: var(--purple);
+        color: white;
+        border-radius: 30px;
+        font-size: 14px;
+        font-weight: 600;
+        transition: .3s;
+    }
+
+    .primary-btn:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 14px 30px rgba(94, 57, 132, .22);
+    }
+
+    .secondary-btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 15px 25px;
+        border: 1px solid rgba(61, 36, 62, .17);
+        color: var(--dark);
+        border-radius: 30px;
+        font-size: 14px;
+        font-weight: 600;
+        transition: .3s;
+    }
+
+    .secondary-btn:hover {
+        background: white;
+    }
+
+
+    /* PLANNER VISUAL */
+
+    .planner-visual {
+        width: 470px;
+        height: 500px;
+        margin: auto;
+        position: relative;
+    }
+
+    .planner-page {
+        position: absolute;
+        width: 315px;
+        height: 400px;
+        background: white;
+        right: 35px;
+        top: 30px;
+        padding: 35px;
+        border-radius: 8px 25px 25px 8px;
+        transform: rotate(4deg);
+        box-shadow: 0 30px 70px rgba(61, 36, 62, .14);
+        z-index: 2;
+    }
+
+    .planner-page::before {
+        content: "";
+        position: absolute;
+        left: 17px;
+        top: 0;
+        height: 100%;
+        width: 1px;
+        background: #eee1e8;
+    }
+
+    .planner-title {
+        font-family: "Vollkorn", serif;
+        font-size: 29px;
+        margin-bottom: 22px;
+        color: var(--dark);
+    }
+
+    .planner-subtitle {
+        color: var(--gold);
+        font-size: 10px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        font-weight: 700;
+        margin-bottom: 15px;
+    }
+
+    .planner-lines {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+    }
+
+    .planner-line {
+        height: 1px;
+        background: #e8dfe6;
+        position: relative;
+    }
+
+    .planner-line::before {
+        content: "";
+        position: absolute;
+        width: 9px;
+        height: 9px;
+        border: 1px solid var(--purple);
+        border-radius: 2px;
+        left: 0;
+        top: -4px;
+        background: white;
+    }
+
+    .planner-line::after {
+        content: "";
+        position: absolute;
+        height: 1px;
+        width: 72%;
+        left: 20px;
+        top: 0;
+        background: #ddd1dc;
+    }
+
+    .planner-card {
+        position: absolute;
+        width: 250px;
+        height: 145px;
+        left: 5px;
+        bottom: 50px;
+        background: var(--light-purple);
+        border-radius: 25px;
+        padding: 27px;
+        z-index: 5;
+        box-shadow: 0 20px 45px rgba(61, 36, 62, .12);
+    }
+
+    .planner-card small {
+        color: var(--purple);
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        font-size: 9px;
+        font-weight: 700;
+    }
+
+    .planner-card strong {
+        display: block;
+        font-family: "Vollkorn", serif;
+        font-size: 25px;
+        margin-top: 8px;
+    }
+
+    .planner-dots {
+        position: absolute;
+        width: 115px;
+        height: 115px;
+        border-radius: 50%;
+        border: 1px solid rgba(185, 149, 88, .55);
+        right: -5px;
+        bottom: 10px;
+    }
+
+    .planner-flower {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        border-radius: 50%;
+        background: var(--rose);
+        left: -15px;
+        top: 15px;
+    }
+
+
+    /* INTRO */
+
+    .intro {
+        background: white;
+    }
+
+    .intro-grid {
+        display: grid;
+        grid-template-columns: .85fr 1.15fr;
+        gap: 80px;
+        align-items: center;
+    }
+
+    .intro-box {
+        background: var(--dark);
+        color: white;
+        padding: 50px;
+        border-radius: 35px;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .intro-box::before {
+        content: "";
+        position: absolute;
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, .05);
+        right: -70px;
+        top: -70px;
+    }
+
+    .intro-icon {
+        width: 58px;
+        height: 58px;
+        border-radius: 18px;
+        background: rgba(255, 255, 255, .1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #d7b978;
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+
+    .intro-box h3 {
+        font-family: "Vollkorn", serif;
+        font-size: 32px;
+        margin-bottom: 15px;
+    }
+
+    .intro-box p {
+        color: #d8cdd9;
+        line-height: 1.8;
+        font-size: 14px;
+    }
+
+    .intro-content h2 {
+        font-family: "Vollkorn", serif;
+        font-size: clamp(40px, 5vw, 59px);
+        line-height: 1.05;
+        margin-bottom: 25px;
+    }
+
+    .intro-content p {
+        color: var(--muted);
+        line-height: 1.9;
+        font-size: 16px;
+        margin-bottom: 17px;
+    }
+
+
+    /* PLANNER TYPES */
+
+    .planner-types {
+        background: var(--cream);
+    }
+
+    .planner-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+    }
+
+    .planner-type {
+        background: white;
+        border-radius: 28px;
+        padding: 35px 28px;
+        border: 1px solid rgba(61, 36, 62, .06);
+        transition: .35s;
+    }
+
+    .planner-type:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 22px 45px rgba(61, 36, 62, .09);
+    }
+
+    .planner-type-number {
+        font-family: "Vollkorn", serif;
+        color: var(--purple);
+        font-size: 17px;
+        margin-bottom: 22px;
+    }
+
+    .planner-type h3 {
+        font-family: "Vollkorn", serif;
+        font-size: 28px;
+        margin-bottom: 12px;
+    }
+
+    .planner-type p {
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.75;
+    }
+
+    .planner-type-tag {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 7px 12px;
+        background: var(--light-purple);
+        color: var(--purple);
+        border-radius: 20px;
+        font-size: 10px;
+        font-weight: 700;
+    }
+
+
+    /* HABITS */
+
+    .habits {
+        background: white;
+    }
+
+    .habit-layout {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 70px;
+        align-items: center;
+    }
+
+    .habit-content h2 {
+        font-family: "Vollkorn", serif;
+        font-size: clamp(40px, 5vw, 59px);
+        line-height: 1.05;
+        margin-bottom: 25px;
+    }
+
+    .habit-content > p {
+        color: var(--muted);
+        line-height: 1.9;
+        font-size: 16px;
+        margin-bottom: 25px;
+    }
+
+    .habit-list {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .habit-item {
+        display: flex;
+        align-items: center;
+        gap: 16px;
+        padding: 16px 18px;
+        border-radius: 16px;
+        background: var(--cream);
+    }
+
+    .habit-check {
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        background: var(--light-purple);
+        color: var(--purple);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 13px;
+        flex-shrink: 0;
+    }
+
+    .habit-item p {
+        margin: 0;
+        color: #59475a;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+
+    /* TRACKER */
+
+    .tracker-box {
+        background: var(--light-purple);
+        border-radius: 35px;
+        padding: 38px;
+    }
+
+    .tracker-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 25px;
+    }
+
+    .tracker-header h3 {
+        font-family: "Vollkorn", serif;
+        font-size: 27px;
+    }
+
+    .tracker-header span {
+        color: var(--purple);
+        font-size: 12px;
+        font-weight: 700;
+        white-space: nowrap;
+    }
+
+    .tracker-row {
+        display: grid;
+        grid-template-columns: 1fr repeat(7, 25px);
+        gap: 10px;
+        align-items: center;
+        margin-bottom: 17px;
+    }
+
+    .tracker-row strong {
+        font-size: 12px;
+        font-weight: 600;
+    }
+
+    .tracker-dot {
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        border: 1px solid rgba(94, 57, 132, .25);
+        background: white;
+    }
+
+    .tracker-dot.done {
+        background: var(--purple);
+        border-color: var(--purple);
+        position: relative;
+    }
+
+    .tracker-dot.done::after {
+        content: "✓";
+        color: white;
+        font-size: 10px;
+        position: absolute;
+        left: 5px;
+        top: 2px;
+    }
+
+    .days {
+        display: grid;
+        grid-template-columns: 1fr repeat(7, 25px);
+        gap: 10px;
+        margin-bottom: 20px;
+    }
+
+    .days span {
+        font-size: 9px;
+        color: var(--muted);
+        text-align: center;
+    }
+
+
+    /* ROUTINE */
+
+    .routine {
+        background: var(--rose);
+    }
+
+    .routine-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    .routine-card {
+        background: white;
+        padding: 32px 27px;
+        border-radius: 26px;
+    }
+
+    .routine-time {
+        color: var(--gold);
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        font-weight: 700;
+        margin-bottom: 18px;
+    }
+
+    .routine-card h3 {
+        font-family: "Vollkorn", serif;
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+
+    .routine-card p {
+        color: var(--muted);
+        line-height: 1.7;
+        font-size: 14px;
+    }
+
+
+    /* BENEFITS */
+
+    .benefits {
+        background: white;
+    }
+
+    .benefit-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 16px;
+        max-width: 900px;
+        margin: auto;
+    }
+
+    .benefit {
+        display: flex;
+        gap: 15px;
+        align-items: flex-start;
+        padding: 23px;
+        border: 1px solid rgba(61, 36, 62, .08);
+        border-radius: 20px;
+    }
+
+    .benefit-icon {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        background: var(--light-purple);
+        color: var(--purple);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+    }
+
+    .benefit p {
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.65;
+    }
+
+
+    /* CTA */
+
+    .cta {
+        padding: 110px 0;
+        text-align: center;
+        background:
+            radial-gradient(circle at 15% 25%, rgba(234, 213, 223, .7), transparent 26%),
+            radial-gradient(circle at 85% 75%, rgba(238, 228, 242, .9), transparent 30%),
+            var(--cream);
+    }
+
+    .cta h2 {
+        max-width: 800px;
+        margin: auto auto 22px;
+        font-family: "Vollkorn", serif;
+        font-size: clamp(45px, 6vw, 72px);
+        line-height: 1.03;
+    }
+
+    .cta h2 em {
+        color: var(--purple);
+        font-style: normal;
+    }
+
+    .cta p {
+        max-width: 600px;
+        margin: auto auto 32px;
+        color: var(--muted);
+        line-height: 1.8;
+    }
+
+
+    /* FOOTER */
+
+    .chandini-footer {
+        position: relative;
+        width: 100% !important;
+        max-width: none !important;
+        margin: 0 !important;
+        padding: 0;
+        overflow: hidden;
+        background: #000;
+        color: #fff;
+    }
+
+    .footer-art {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        line-height: 0;
+        background: #f7f7f4;
+    }
+
+    .footer-art img {
+        display: block;
+        width: 100%;
+        height: auto;
+        margin: 0;
+        object-fit: contain;
+        object-position: center bottom;
+    }
+
+    .footer-main {
+        width: 100%;
+        margin: 0;
+        padding: 60px max(35px, calc((100% - 1180px) / 2));
+        display: grid;
+        grid-template-columns: 1.15fr 1fr 1fr;
+        align-items: start;
+        gap: 70px;
+        background: #000;
+        border-top: 1px solid rgba(255, 255, 255, .15);
+    }
+
+    .footer-brand h2 {
+        margin: 0;
+        font-family: "Bodoni Moda", serif;
+        font-size: 55px;
+        font-weight: 400;
+        line-height: .9;
+        letter-spacing: -2px;
+        color: #fff;
+    }
+
+    .footer-brand > span {
+        display: block;
+        margin-top: 13px;
+        font-family: Arial, sans-serif;
+        font-size: 8px;
+        font-weight: 500;
+        letter-spacing: 7px;
+        color: #fff;
+    }
+
+    .footer-brand p {
+        margin: 28px 0 0;
+        font-family: Arial, sans-serif;
+        font-size: 11px;
+        line-height: 1.8;
+        color: rgba(255, 255, 255, .65);
+    }
+
+    .footer-links {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+    }
+
+    .footer-link-group {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 12px;
+    }
+
+    .footer-link-group > span,
+    .footer-connect > span {
+        display: block;
+        margin-bottom: 10px;
+        font-family: Arial, sans-serif;
+        font-size: 7px;
+        font-weight: 600;
+        letter-spacing: 3px;
+        color: rgba(255, 255, 255, .45);
+    }
+
+    .footer-link-group a {
+        display: inline-block;
+        font-family: "Bodoni Moda", serif;
+        font-size: 14px;
+        font-weight: 400;
+        color: #fff;
+        transition: transform .3s ease, opacity .3s ease;
+    }
+
+    .footer-link-group a:hover {
+        transform: translateX(4px);
+        opacity: .55;
+    }
+
+    .footer-connect h3 {
+        margin: 0 0 27px;
+        font-family: "Bodoni Moda", serif;
+        font-size: clamp(31px, 3vw, 45px);
+        font-weight: 400;
+        line-height: 1;
+        letter-spacing: -1px;
+        color: #fff;
+    }
+
+    .footer-socials {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .footer-socials a {
+        width: 39px;
+        height: 39px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px solid rgba(255, 255, 255, .35);
+        border-radius: 50%;
+        background: transparent;
+        color: #fff;
+        font-size: 14px;
+        transition: transform .3s ease, background .3s ease, color .3s ease;
+    }
+
+    .footer-socials a:hover {
+        transform: translateY(-4px);
+        background: #fff;
+        color: #000;
+    }
+
+    .footer-bottom {
+        width: 100%;
+        min-height: 68px;
+        padding: 0 max(35px, calc((100% - 1180px) / 2));
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 25px;
+        background: #000;
+        border-top: 1px solid rgba(255, 255, 255, .15);
+    }
+
+    .footer-bottom span,
+    .footer-bottom a {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        font-size: 7px;
+        font-weight: 500;
+        letter-spacing: 2px;
+        color: rgba(255, 255, 255, .65);
+    }
+
+    .footer-bottom a:hover {
+        color: #fff;
+    }
+
+
+    /* ANIMATION */
+
+    .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: .8s ease;
+    }
+
+    .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .footer-brand,
+    .footer-links,
+    .footer-connect {
+        opacity: 0;
+        transform: translateY(22px);
+        transition:
+            opacity .8s cubic-bezier(.22, 1, .36, 1),
+            transform .8s cubic-bezier(.22, 1, .36, 1);
+    }
+
+    .chandini-footer.footer-visible .footer-brand {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: .05s;
+    }
+
+    .chandini-footer.footer-visible .footer-links {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: .17s;
+    }
+
+    .chandini-footer.footer-visible .footer-connect {
+        opacity: 1;
+        transform: translateY(0);
+        transition-delay: .29s;
+    }
+
+
+    /* TABLET */
+
+    @media (max-width: 1100px) {
+
+        .navbar {
+            padding-left: 20px;
+            padding-right: 20px;
         }
 
-        html {
-            scroll-behavior: smooth;
+        .nav-links {
+            gap: 5px;
         }
 
-        body {
-            font-family: "DM Sans", sans-serif;
-            background: #fffaf7;
-            color: #3d243e;
-            overflow-x: hidden;
+        .nav-links a {
+            padding: 9px 11px;
+            font-size: 13px;
         }
 
-        :root {
-            --purple: #5e3984;
-            --dark: #3d243e;
-            --light-purple: #eee4f2;
-            --cream: #fffaf7;
-            --rose: #ead5df;
-            --gold: #b99558;
-            --white: #ffffff;
-            --muted: #756675;
+        .hero-grid {
+            gap: 35px;
         }
 
-        a {
-            text-decoration: none;
-            color: inherit;
+        .planner-visual {
+            transform: scale(.9);
+        }
+    }
+
+
+    @media (max-width: 950px) {
+
+        .navbar {
+            flex-direction: column;
+            justify-content: center;
+            padding: 15px 20px;
         }
 
-        img {
-            width: 100%;
-            display: block;
+        .brand {
+            align-items: center;
         }
 
-        .container {
-            width: min(1120px, 90%);
-            margin: auto;
+        .brand-sub {
+            margin-left: 45px;
         }
 
-        .section {
-            padding: 100px 0;
+        .nav-links {
+            justify-content: center;
         }
 
-        .eyebrow {
-            color: var(--purple);
-            font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            margin-bottom: 15px;
-        }
-
-        .section-heading {
-            max-width: 720px;
-            margin: auto auto 60px;
+        .hero-grid {
+            grid-template-columns: 1fr;
+            gap: 40px;
             text-align: center;
         }
 
-        .section-heading h2 {
-            font-family: "Vollkorn", serif;
-            font-size: clamp(40px, 5vw, 60px);
-            line-height: 1.05;
-            margin-bottom: 20px;
+        .hero-content {
+            margin: auto;
         }
 
-        .section-heading p {
-            color: var(--muted);
-            line-height: 1.8;
-            font-size: 16px;
+        .hero-text {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-buttons {
+            justify-content: center;
+        }
+
+        .planner-visual {
+            transform: scale(.9);
+            margin-top: -10px;
+        }
+
+        .intro-grid,
+        .habit-layout {
+            grid-template-columns: 1fr;
+            gap: 45px;
+        }
+
+        .planner-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .routine-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .footer-main {
+            padding: 50px 35px;
+            grid-template-columns: 1fr 1fr;
+            gap: 45px;
+        }
+
+        .footer-connect {
+            grid-column: 1 / -1;
+        }
+
+        .footer-bottom {
+            padding: 0 35px;
+        }
+    }
+
+
+    /* MOBILE */
+
+    @media (max-width: 600px) {
+
+        body {
+            width: 100%;
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: calc(100% - 32px);
+            max-width: 100%;
+        }
+
+        .section {
+            padding: 70px 0;
         }
 
 
-        /* NAVBAR */
+        /* MOBILE NAVBAR */
 
         .fixed-header {
             position: sticky;
             top: 0;
-            z-index: 1000;
-            background: #e8d8e8;
-            border-bottom: 1px solid rgba(61, 36, 62, 0.08);
         }
 
         .navbar {
-            min-height: 92px;
-            max-width: 1250px;
-            margin: auto;
-            padding: 12px 28px;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 25px;
+            width: 100%;
+            min-height: auto;
+            padding: 12px 10px 14px;
+            gap: 10px;
         }
 
         .brand {
-            display: flex;
-            flex-direction: column;
-            line-height: 0.9;
-            min-width: 190px;
+            min-width: auto;
+            align-items: center;
+            width: 100%;
         }
 
         .brand-main {
-            font-family: "Vollkorn", serif;
-            font-size: 48px;
-            font-weight: 600;
-            color: #5e3984;
-            letter-spacing: -2px;
+            font-size: 39px;
+            letter-spacing: -1.5px;
         }
 
         .brand-sub {
-            font-family: "Vollkorn", serif;
-            font-size: 25px;
-            font-weight: 500;
-            color: #3d243e;
-            margin-left: 52px;
-            margin-top: 7px;
-            letter-spacing: 1px;
+            font-size: 20px;
+            margin-left: 37px;
+            margin-top: 5px;
         }
 
         .nav-links {
-            display: flex;
-            align-items: center;
-            justify-content: flex-end;
-            gap: 10px;
-            flex-wrap: wrap;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 6px;
         }
 
         .nav-links a {
-            padding: 11px 15px;
-            border-radius: 30px;
-            font-size: 14px;
-            font-weight: 600;
-            transition: 0.3s;
-        }
-
-        .nav-links a:hover {
-            background: rgba(94, 57, 132, 0.09);
-            color: #5e3984;
+            width: 100%;
+            padding: 9px 5px;
+            font-size: 10px;
+            text-align: center;
+            white-space: nowrap;
         }
 
         .nav-links .nav-cta {
-            background: #5e3984;
-            color: white;
-            padding: 12px 19px;
-        }
-
-        .nav-links .nav-cta:hover {
-            background: #472766;
-            color: white;
+            padding: 9px 5px;
         }
 
 
-        /* HERO */
+        /* MOBILE HERO */
 
         .hero {
-            min-height: 100vh;
-            padding: 100px 0 90px;
-            display: flex;
-            align-items: center;
-            background:
-                radial-gradient(circle at 10% 15%, rgba(234, 213, 223, .7), transparent 27%),
-                radial-gradient(circle at 90% 80%, rgba(238, 228, 242, .9), transparent 32%),
-                var(--cream);
+            min-height: auto;
+            padding: 70px 0 60px;
         }
 
         .hero-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 75px;
-            align-items: center;
-        }
-
-        .hero-content {
-            max-width: 620px;
+            gap: 35px;
         }
 
         .hero-tag {
-            display: inline-flex;
-            align-items: center;
-            gap: 9px;
-            padding: 9px 17px;
-            background: var(--light-purple);
-            color: var(--purple);
-            border-radius: 30px;
-            font-size: 12px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            margin-bottom: 25px;
-        }
-
-        .hero-tag span {
-            width: 7px;
-            height: 7px;
-            background: var(--gold);
-            border-radius: 50%;
+            max-width: 100%;
+            justify-content: center;
+            padding: 8px 12px;
+            font-size: 9px;
+            letter-spacing: 1px;
+            text-align: center;
         }
 
         .hero h1 {
-            font-family: "Vollkorn", serif;
-            font-size: clamp(54px, 7vw, 82px);
+            font-size: clamp(43px, 13vw, 58px);
             line-height: .98;
-            font-weight: 600;
-            margin-bottom: 28px;
-        }
-
-        .hero h1 em {
-            color: var(--purple);
-            font-style: normal;
+            margin-bottom: 22px;
         }
 
         .hero-text {
-            max-width: 540px;
-            color: var(--muted);
-            font-size: 17px;
-            line-height: 1.85;
-            margin-bottom: 35px;
+            font-size: 14px;
+            line-height: 1.75;
+            margin-bottom: 27px;
         }
 
         .hero-buttons {
-            display: flex;
-            gap: 14px;
-            flex-wrap: wrap;
+            width: 100%;
+            flex-direction: column;
+            gap: 10px;
         }
 
-        .primary-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 15px 25px;
-            background: var(--purple);
-            color: white;
-            border-radius: 30px;
-            font-size: 14px;
-            font-weight: 600;
-            transition: .3s;
-        }
-
-        .primary-btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 14px 30px rgba(94, 57, 132, .22);
-        }
-
+        .primary-btn,
         .secondary-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            padding: 15px 25px;
-            border: 1px solid rgba(61, 36, 62, .17);
-            color: var(--dark);
-            border-radius: 30px;
-            font-size: 14px;
-            font-weight: 600;
-            transition: .3s;
-        }
-
-        .secondary-btn:hover {
-            background: white;
+            width: 100%;
+            padding: 13px 18px;
+            font-size: 13px;
         }
 
 
-        /* PLANNER VISUAL */
+        /* MOBILE PLANNER VISUAL */
 
         .planner-visual {
-            width: 470px;
-            height: 500px;
-            margin: auto;
-            position: relative;
+            width: 100%;
+            max-width: 330px;
+            height: 355px;
+            margin: 0 auto;
+            transform: none;
         }
 
         .planner-page {
-            position: absolute;
-            width: 315px;
-            height: 400px;
-            background: white;
-            right: 35px;
-            top: 30px;
-            padding: 35px;
-            border-radius: 8px 25px 25px 8px;
-            transform: rotate(4deg);
-            box-shadow: 0 30px 70px rgba(61, 36, 62, .14);
-            z-index: 2;
+            width: 220px;
+            height: 285px;
+            right: 5px;
+            top: 15px;
+            padding: 25px 24px;
+            border-radius: 7px 20px 20px 7px;
         }
 
         .planner-page::before {
-            content: "";
-            position: absolute;
-            left: 17px;
-            top: 0;
-            height: 100%;
-            width: 1px;
-            background: #eee1e8;
-        }
-
-        .planner-title {
-            font-family: "Vollkorn", serif;
-            font-size: 29px;
-            margin-bottom: 22px;
-            color: var(--dark);
+            left: 13px;
         }
 
         .planner-subtitle {
-            color: var(--gold);
-            font-size: 10px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 700;
-            margin-bottom: 15px;
+            font-size: 8px;
+            margin-bottom: 10px;
         }
 
-        .planner-lines {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        .planner-line {
-            height: 1px;
-            background: #e8dfe6;
-            position: relative;
-        }
-
-        .planner-line::before {
-            content: "";
-            position: absolute;
-            width: 9px;
-            height: 9px;
-            border: 1px solid var(--purple);
-            border-radius: 2px;
-            left: 0;
-            top: -4px;
-            background: white;
-        }
-
-        .planner-line::after {
-            content: "";
-            position: absolute;
-            height: 1px;
-            width: 72%;
-            left: 20px;
-            top: 0;
-            background: #ddd1dc;
-        }
-
-        .planner-card {
-            position: absolute;
-            width: 250px;
-            height: 145px;
-            left: 5px;
-            bottom: 50px;
-            background: var(--light-purple);
-            border-radius: 25px;
-            padding: 27px;
-            z-index: 5;
-            box-shadow: 0 20px 45px rgba(61, 36, 62, .12);
-        }
-
-        .planner-card small {
-            color: var(--purple);
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-size: 9px;
-            font-weight: 700;
-        }
-
-        .planner-card strong {
-            display: block;
-            font-family: "Vollkorn", serif;
-            font-size: 25px;
-            margin-top: 8px;
-        }
-
-        .planner-dots {
-            position: absolute;
-            width: 115px;
-            height: 115px;
-            border-radius: 50%;
-            border: 1px solid rgba(185,149,88,.55);
-            right: -5px;
-            bottom: 10px;
-        }
-
-        .planner-flower {
-            position: absolute;
-            width: 100px;
-            height: 100px;
-            border-radius: 50%;
-            background: var(--rose);
-            left: -15px;
-            top: 15px;
-        }
-
-
-        /* INTRO */
-
-        .intro {
-            background: white;
-        }
-
-        .intro-grid {
-            display: grid;
-            grid-template-columns: .85fr 1.15fr;
-            gap: 80px;
-            align-items: center;
-        }
-
-        .intro-box {
-            background: var(--dark);
-            color: white;
-            padding: 50px;
-            border-radius: 35px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .intro-box::before {
-            content: "";
-            position: absolute;
-            width: 180px;
-            height: 180px;
-            border-radius: 50%;
-            background: rgba(255,255,255,.05);
-            right: -70px;
-            top: -70px;
-        }
-
-        .intro-icon {
-            width: 58px;
-            height: 58px;
-            border-radius: 18px;
-            background: rgba(255,255,255,.1);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #d7b978;
-            font-size: 24px;
-            margin-bottom: 30px;
-        }
-
-        .intro-box h3 {
-            font-family: "Vollkorn", serif;
-            font-size: 32px;
-            margin-bottom: 15px;
-        }
-
-        .intro-box p {
-            color: #d8cdd9;
-            line-height: 1.8;
-            font-size: 14px;
-        }
-
-        .intro-content h2 {
-            font-family: "Vollkorn", serif;
-            font-size: clamp(40px, 5vw, 59px);
-            line-height: 1.05;
-            margin-bottom: 25px;
-        }
-
-        .intro-content p {
-            color: var(--muted);
-            line-height: 1.9;
-            font-size: 16px;
+        .planner-title {
+            font-size: 21px;
             margin-bottom: 17px;
         }
 
-
-        /* PLANNER TYPES */
-
-        .planner-types {
-            background: var(--cream);
+        .planner-lines {
+            gap: 13px;
         }
 
-        .planner-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 22px;
+        .planner-line::after {
+            width: 65%;
         }
 
-        .planner-type {
-            background: white;
-            border-radius: 28px;
-            padding: 35px 28px;
-            border: 1px solid rgba(61,36,62,.06);
-            transition: .35s;
+        .planner-card {
+            width: 190px;
+            height: 112px;
+            left: 0;
+            bottom: 20px;
+            padding: 20px;
+            border-radius: 20px;
         }
 
-        .planner-type:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 22px 45px rgba(61,36,62,.09);
+        .planner-card small {
+            font-size: 8px;
         }
 
-        .planner-type-number {
-            font-family: "Vollkorn", serif;
-            color: var(--purple);
-            font-size: 17px;
+        .planner-card strong {
+            font-size: 18px;
+            line-height: 1.15;
+        }
+
+        .planner-flower {
+            width: 65px;
+            height: 65px;
+            left: 0;
+            top: 5px;
+        }
+
+        .planner-dots {
+            width: 75px;
+            height: 75px;
+            right: 0;
+            bottom: 5px;
+        }
+
+
+        /* MOBILE INTRO */
+
+        .intro-grid {
+            gap: 35px;
+        }
+
+        .intro-box {
+            padding: 30px 25px;
+            border-radius: 25px;
+        }
+
+        .intro-icon {
+            width: 50px;
+            height: 50px;
             margin-bottom: 22px;
         }
 
-        .planner-type h3 {
-            font-family: "Vollkorn", serif;
-            font-size: 28px;
-            margin-bottom: 12px;
+        .intro-box h3 {
+            font-size: 27px;
+            line-height: 1.15;
         }
 
-        .planner-type p {
-            color: var(--muted);
+        .intro-box p {
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+        .intro-content h2 {
+            font-size: clamp(37px, 11vw, 49px);
+        }
+
+        .intro-content p {
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+
+        /* MOBILE SECTION HEADING */
+
+        .section-heading {
+            margin-bottom: 40px;
+        }
+
+        .eyebrow {
+            font-size: 10px;
+            letter-spacing: 1.6px;
+        }
+
+        .section-heading h2 {
+            font-size: clamp(37px, 11vw, 50px);
+            line-height: 1.05;
+        }
+
+        .section-heading p {
             font-size: 14px;
             line-height: 1.75;
         }
 
-        .planner-type-tag {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 7px 12px;
-            background: var(--light-purple);
-            color: var(--purple);
-            border-radius: 20px;
-            font-size: 10px;
-            font-weight: 700;
+
+        /* MOBILE PLANNERS */
+
+        .planner-grid {
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+
+        .planner-type {
+            padding: 28px 23px;
+            border-radius: 23px;
+        }
+
+        .planner-type-number {
+            font-size: 15px;
+            margin-bottom: 16px;
+        }
+
+        .planner-type h3 {
+            font-size: 25px;
+        }
+
+        .planner-type p {
+            font-size: 13px;
+            line-height: 1.7;
         }
 
 
-        /* HABITS */
-
-        .habits {
-            background: white;
-        }
+        /* MOBILE HABITS */
 
         .habit-layout {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 70px;
-            align-items: center;
+            gap: 40px;
         }
 
         .habit-content h2 {
-            font-family: "Vollkorn", serif;
-            font-size: clamp(40px, 5vw, 59px);
-            line-height: 1.05;
-            margin-bottom: 25px;
+            font-size: clamp(38px, 11vw, 50px);
         }
 
-        .habit-content p {
-            color: var(--muted);
-            line-height: 1.9;
-            font-size: 16px;
-            margin-bottom: 25px;
-        }
-
-        .habit-list {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-        }
-
-        .habit-item {
-            display: flex;
-            align-items: center;
-            gap: 16px;
-            padding: 16px 18px;
-            border-radius: 16px;
-            background: var(--cream);
-        }
-
-        .habit-check {
-            width: 30px;
-            height: 30px;
-            border-radius: 50%;
-            background: var(--light-purple);
-            color: var(--purple);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 13px;
-            flex-shrink: 0;
-        }
-
-        .habit-item p {
-            margin: 0;
-            color: #59475a;
+        .habit-content > p {
             font-size: 14px;
-            line-height: 1.5;
-        }
-
-
-        /* TRACKER */
-
-        .tracker-box {
-            background: var(--light-purple);
-            border-radius: 35px;
-            padding: 38px;
-        }
-
-        .tracker-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 25px;
-        }
-
-        .tracker-header h3 {
-            font-family: "Vollkorn", serif;
-            font-size: 27px;
-        }
-
-        .tracker-header span {
-            color: var(--purple);
-            font-size: 12px;
-            font-weight: 700;
-        }
-
-        .tracker-row {
-            display: grid;
-            grid-template-columns: 1fr repeat(7, 25px);
-            gap: 10px;
-            align-items: center;
-            margin-bottom: 17px;
-        }
-
-        .tracker-row strong {
-            font-size: 12px;
-            font-weight: 600;
-        }
-
-        .tracker-dot {
-            width: 20px;
-            height: 20px;
-            border-radius: 50%;
-            border: 1px solid rgba(94,57,132,.25);
-            background: white;
-        }
-
-        .tracker-dot.done {
-            background: var(--purple);
-            border-color: var(--purple);
-            position: relative;
-        }
-
-        .tracker-dot.done::after {
-            content: "✓";
-            color: white;
-            font-size: 10px;
-            position: absolute;
-            left: 5px;
-            top: 2px;
-        }
-
-        .days {
-            display: grid;
-            grid-template-columns: 1fr repeat(7, 25px);
-            gap: 10px;
-            margin-bottom: 20px;
-        }
-
-        .days span {
-            font-size: 9px;
-            color: var(--muted);
-            text-align: center;
-        }
-
-
-        /* ROUTINE */
-
-        .routine {
-            background: var(--rose);
-        }
-
-        .routine-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 20px;
-        }
-
-        .routine-card {
-            background: white;
-            padding: 32px 27px;
-            border-radius: 26px;
-        }
-
-        .routine-time {
-            color: var(--gold);
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 700;
-            margin-bottom: 18px;
-        }
-
-        .routine-card h3 {
-            font-family: "Vollkorn", serif;
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
-
-        .routine-card p {
-            color: var(--muted);
-            line-height: 1.7;
-            font-size: 14px;
-        }
-
-
-        /* BENEFITS */
-
-        .benefits {
-            background: white;
-        }
-
-        .benefit-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 16px;
-            max-width: 900px;
-            margin: auto;
-        }
-
-        .benefit {
-            display: flex;
-            gap: 15px;
-            align-items: flex-start;
-            padding: 23px;
-            border: 1px solid rgba(61,36,62,.08);
-            border-radius: 20px;
-        }
-
-        .benefit-icon {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            background: var(--light-purple);
-            color: var(--purple);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .benefit p {
-            color: var(--muted);
-            font-size: 14px;
-            line-height: 1.65;
-        }
-
-
-        /* CTA */
-
-        .cta {
-            padding: 110px 0;
-            text-align: center;
-            background:
-                radial-gradient(circle at 15% 25%, rgba(234,213,223,.7), transparent 26%),
-                radial-gradient(circle at 85% 75%, rgba(238,228,242,.9), transparent 30%),
-                var(--cream);
-        }
-
-        .cta h2 {
-            max-width: 800px;
-            margin: auto auto 22px;
-            font-family: "Vollkorn", serif;
-            font-size: clamp(45px, 6vw, 72px);
-            line-height: 1.03;
-        }
-
-        .cta h2 em {
-            color: var(--purple);
-            font-style: normal;
-        }
-
-        .cta p {
-            max-width: 600px;
-            margin: auto auto 32px;
-            color: var(--muted);
             line-height: 1.8;
         }
 
+        .habit-item {
+            padding: 13px 14px;
+            gap: 12px;
+        }
 
-        /* CHANDINI CONNECTS FOOTER */
+        .habit-check {
+            width: 28px;
+            height: 28px;
+            font-size: 12px;
+        }
+
+        .habit-item p {
+            font-size: 13px;
+        }
+
+
+        /* MOBILE TRACKER */
+
+        .tracker-box {
+            width: 100%;
+            padding: 24px 15px;
+            border-radius: 25px;
+            overflow: hidden;
+        }
+
+        .tracker-header {
+            align-items: flex-start;
+            margin-bottom: 22px;
+        }
+
+        .tracker-header h3 {
+            font-size: 22px;
+            line-height: 1.15;
+        }
+
+        .tracker-header span {
+            font-size: 9px;
+        }
+
+        .days,
+        .tracker-row {
+            grid-template-columns: minmax(90px, 1fr) repeat(7, 20px);
+            gap: 5px;
+        }
+
+        .days {
+            margin-bottom: 17px;
+        }
+
+        .days span {
+            font-size: 8px;
+        }
+
+        .tracker-row {
+            margin-bottom: 15px;
+        }
+
+        .tracker-row strong {
+            font-size: 9px;
+            white-space: nowrap;
+        }
+
+        .tracker-dot {
+            width: 18px;
+            height: 18px;
+        }
+
+        .tracker-dot.done::after {
+            font-size: 9px;
+            left: 4px;
+            top: 2px;
+        }
+
+
+        /* MOBILE ROUTINE */
+
+        .routine-grid {
+            grid-template-columns: 1fr;
+            gap: 14px;
+        }
+
+        .routine-card {
+            padding: 27px 23px;
+            border-radius: 22px;
+        }
+
+        .routine-time {
+            font-size: 10px;
+            margin-bottom: 13px;
+        }
+
+        .routine-card h3 {
+            font-size: 25px;
+        }
+
+        .routine-card p {
+            font-size: 13px;
+            line-height: 1.7;
+        }
+
+
+        /* MOBILE BENEFITS */
+
+        .benefit-grid {
+            grid-template-columns: 1fr;
+            gap: 12px;
+        }
+
+        .benefit {
+            padding: 18px;
+            gap: 12px;
+            border-radius: 17px;
+        }
+
+        .benefit-icon {
+            width: 29px;
+            height: 29px;
+            font-size: 12px;
+        }
+
+        .benefit p {
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+
+        /* MOBILE CTA */
+
+        .cta {
+            padding: 80px 0;
+        }
+
+        .cta h2 {
+            font-size: clamp(40px, 12vw, 55px);
+            line-height: 1.03;
+        }
+
+        .cta p {
+            font-size: 14px;
+            line-height: 1.75;
+            margin-bottom: 27px;
+        }
+
+        .cta .primary-btn {
+            width: 100%;
+        }
+
+
+        /* MOBILE FOOTER */
 
         .chandini-footer {
-            position: relative;
             width: 100% !important;
-            max-width: none !important;
             margin: 0 !important;
-            padding: 0;
-            overflow: hidden;
-            background: #000;
-            color: #fff;
-            box-sizing: border-box;
         }
 
         .footer-art {
             width: 100%;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-            line-height: 0;
-            background: #f7f7f4;
+            height: 205px;
         }
 
         .footer-art img {
-            display: block;
             width: 100%;
-            height: auto;
-            margin: 0;
-            object-fit: contain;
-            object-position: center bottom;
+            height: 100%;
+            object-fit: cover;
+            object-position: center center;
         }
 
         .footer-main {
             width: 100%;
-            margin: 0;
-            padding: 60px max(35px, calc((100% - 1180px) / 2));
-            display: grid;
-            grid-template-columns: 1.15fr 1fr 1fr;
-            align-items: start;
-            gap: 70px;
-            background: #000;
-            border-top: 1px solid rgba(255,255,255,.15);
-            box-sizing: border-box;
-        }
-
-        .footer-brand h2 {
-            margin: 0;
-            font-family: "Bodoni Moda", serif;
-            font-size: 55px;
-            font-weight: 400;
-            line-height: .9;
-            letter-spacing: -2px;
-            color: #fff;
-        }
-
-        .footer-brand > span {
-            display: block;
-            margin-top: 13px;
-            font-family: Arial, sans-serif;
-            font-size: 8px;
-            font-weight: 500;
-            letter-spacing: 7px;
-            color: #fff;
-        }
-
-        .footer-brand p {
-            margin: 28px 0 0;
-            font-family: Arial, sans-serif;
-            font-size: 11px;
-            line-height: 1.8;
-            color: rgba(255,255,255,.65);
-        }
-
-        .footer-links {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
+            padding: 42px 18px 45px;
+            grid-template-columns: 1fr;
             gap: 40px;
         }
 
+        .footer-brand h2 {
+            font-size: 43px;
+        }
+
+        .footer-brand > span {
+            margin-top: 10px;
+            font-size: 7px;
+            letter-spacing: 5px;
+        }
+
+        .footer-brand p {
+            margin-top: 20px;
+            font-size: 10px;
+            line-height: 1.8;
+        }
+
+        .footer-links {
+            width: 100%;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
         .footer-link-group {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            gap: 12px;
+            gap: 10px;
         }
 
         .footer-link-group > span,
         .footer-connect > span {
-            display: block;
-            margin-bottom: 10px;
-            font-family: Arial, sans-serif;
-            font-size: 7px;
-            font-weight: 600;
-            letter-spacing: 3px;
-            color: rgba(255,255,255,.45);
+            font-size: 6.5px;
+            letter-spacing: 2px;
+            margin-bottom: 7px;
         }
 
         .footer-link-group a {
-            display: inline-block;
-            font-family: "Bodoni Moda", serif;
-            font-size: 14px;
-            font-weight: 400;
-            color: #fff;
-            text-decoration: none;
-            transition: transform .3s ease, opacity .3s ease;
+            font-size: 12px;
         }
 
-        .footer-link-group a:hover {
-            transform: translateX(4px);
-            opacity: .55;
+        .footer-connect {
+            grid-column: auto;
         }
 
         .footer-connect h3 {
-            margin: 0 0 27px;
-            font-family: "Bodoni Moda", serif;
-            font-size: clamp(31px, 3vw, 45px);
-            font-weight: 400;
-            line-height: 1;
-            letter-spacing: -1px;
-            color: #fff;
-        }
-
-        .footer-connect h3 em {
-            color: #fff;
-            font-weight: 400;
+            max-width: 280px;
+            font-size: 33px;
+            line-height: 1.05;
+            margin-bottom: 23px;
         }
 
         .footer-socials {
-            display: flex;
-            align-items: center;
-            gap: 10px;
+            gap: 8px;
         }
 
         .footer-socials a {
-            width: 39px;
-            height: 39px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 1px solid rgba(255,255,255,.35);
-            border-radius: 50%;
-            background: transparent;
-            color: #fff;
-            text-decoration: none;
-            font-size: 14px;
-            transition: transform .3s ease, background .3s ease, color .3s ease;
-        }
-
-        .footer-socials a i {
-            color: inherit;
-        }
-
-        .footer-socials a:hover {
-            transform: translateY(-4px);
-            background: #fff;
-            color: #000;
+            width: 36px;
+            height: 36px;
+            font-size: 12px;
         }
 
         .footer-bottom {
-            width: 100%;
-            min-height: 68px;
-            padding: 0 max(35px, calc((100% - 1180px) / 2));
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 25px;
-            background: #000;
-            border-top: 1px solid rgba(255,255,255,.15);
-            box-sizing: border-box;
+            min-height: auto;
+            padding: 23px 18px 80px;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 10px;
         }
 
         .footer-bottom span,
         .footer-bottom a {
-            margin: 0;
-            font-family: Arial, sans-serif;
-            font-size: 7px;
-            font-weight: 500;
-            letter-spacing: 2px;
-            color: rgba(255,255,255,.65);
-            text-decoration: none;
+            font-size: 6px;
+            letter-spacing: 1.3px;
+        }
+    }
+
+
+    /* SMALL MOBILE */
+
+    @media (max-width: 390px) {
+
+        .container {
+            width: calc(100% - 28px);
         }
 
-        .footer-bottom a {
-            transition: color .25s ease;
+        .navbar {
+            padding-left: 8px;
+            padding-right: 8px;
         }
 
-        .footer-bottom a:hover {
-            color: #fff;
+        .brand-main {
+            font-size: 36px;
         }
 
-        .footer-brand,
-        .footer-links,
-        .footer-connect {
-            opacity: 0;
-            transform: translateY(22px);
-            transition:
-                opacity .8s cubic-bezier(.22,1,.36,1),
-                transform .8s cubic-bezier(.22,1,.36,1);
+        .brand-sub {
+            font-size: 18px;
+            margin-left: 34px;
         }
 
-        .chandini-footer.footer-visible .footer-brand {
-            opacity: 1;
-            transform: translateY(0);
-            transition-delay: .05s;
+        .nav-links {
+            gap: 4px;
         }
 
-        .chandini-footer.footer-visible .footer-links {
-            opacity: 1;
-            transform: translateY(0);
-            transition-delay: .17s;
+        .nav-links a {
+            padding: 8px 3px;
+            font-size: 9px;
         }
 
-        .chandini-footer.footer-visible .footer-connect {
-            opacity: 1;
-            transform: translateY(0);
-            transition-delay: .29s;
+        .hero {
+            padding-top: 60px;
         }
 
-        @media (max-width: 950px) {
-
-            .footer-main {
-                padding: 50px 35px;
-                grid-template-columns: 1fr 1fr;
-                gap: 45px;
-            }
-
-            .footer-connect {
-                grid-column: 1 / -1;
-            }
-
-            .footer-bottom {
-                padding: 0 35px;
-            }
-
+        .hero h1 {
+            font-size: 43px;
         }
 
-        @media (max-width: 768px) {
-
-            .chandini-footer {
-                width: 100% !important;
-                margin: 0 !important;
-                background: #000;
-            }
-
-            .footer-art {
-                width: 100%;
-                height: 220px;
-            }
-
-            .footer-art img {
-                width: 100%;
-                height: 100%;
-                object-fit: cover;
-                object-position: center center;
-            }
-
-            .footer-main {
-                padding: 43px 20px 45px;
-                grid-template-columns: 1fr;
-                gap: 42px;
-                background: #000;
-            }
-
-            .footer-brand h2 {
-                font-size: 45px;
-            }
-
-            .footer-brand > span {
-                margin-top: 11px;
-                font-size: 7px;
-                letter-spacing: 6px;
-            }
-
-            .footer-brand p {
-                margin-top: 21px;
-                font-size: 10px;
-            }
-
-            .footer-links {
-                grid-template-columns: 1fr 1fr;
-                gap: 25px;
-            }
-
-            .footer-link-group a {
-                font-size: 13px;
-            }
-
-            .footer-connect h3 {
-                max-width: 280px;
-                font-size: 35px;
-            }
-
-            .footer-socials a {
-                width: 37px;
-                height: 37px;
-                font-size: 13px;
-            }
-
-            .footer-bottom {
-                min-height: auto;
-                padding: 24px 20px 100px;
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 11px;
-                background: #000;
-            }
-
-            .footer-bottom span,
-            .footer-bottom a {
-                font-size: 6.5px;
-                letter-spacing: 1.6px;
-            }
-
+        .hero-tag {
+            font-size: 8px;
         }
 
-        @media (max-width: 390px) {
-
-            .footer-art {
-                height: 195px;
-            }
-
-            .footer-main {
-                padding-left: 16px;
-                padding-right: 16px;
-            }
-
-            .footer-brand h2 {
-                font-size: 41px;
-            }
-
-            .footer-connect h3 {
-                font-size: 32px;
-            }
-
-            .footer-bottom {
-                padding-left: 16px;
-                padding-right: 16px;
-                padding-bottom: 95px;
-            }
-
+        .planner-visual {
+            max-width: 305px;
+            height: 335px;
         }
 
-
-        /* ANIMATION */
-
-        .reveal {
-            opacity: 0;
-            transform: translateY(30px);
-            transition: .8s ease;
+        .planner-page {
+            width: 205px;
+            height: 270px;
+            padding: 22px;
         }
 
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
+        .planner-card {
+            width: 175px;
+            height: 105px;
+            padding: 17px;
         }
 
-
-        /* RESPONSIVE */
-
-        @media(max-width: 950px) {
-
-            .hero-grid {
-                gap: 40px;
-            }
-
-            .planner-visual {
-                transform: scale(.9);
-            }
-
-            .planner-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-
-            .routine-grid {
-                grid-template-columns: 1fr;
-            }
-
+        .planner-card strong {
+            font-size: 16px;
         }
 
-
-        @media (max-width: 900px) {
-
-            .navbar {
-                flex-direction: column;
-                justify-content: center;
-                padding: 15px 20px;
-            }
-
-            .brand {
-                align-items: center;
-            }
-
-            .brand-sub {
-                margin-left: 45px;
-            }
-
-            .nav-links {
-                justify-content: center;
-            }
-
-            .hero-grid {
-                grid-template-columns: 1fr;
-                text-align: center;
-            }
-
-            .hero-content {
-                margin: auto;
-            }
-
-            .hero-text {
-                margin-left: auto;
-                margin-right: auto;
-            }
-
-            .hero-buttons {
-                justify-content: center;
-            }
-
-            .intro-grid,
-            .habit-layout {
-                grid-template-columns: 1fr;
-            }
-
+        .tracker-box {
+            padding: 22px 11px;
         }
 
-
-        @media (max-width: 430px) {
-
-            .navbar {
-                min-height: 64px;
-                padding: 9px 15px;
-            }
-
-            .brand-main {
-                font-size: 38px;
-            }
-
-            .brand-sub {
-                font-size: 20px;
-                margin-left: 38px;
-            }
-
-            .nav-links {
-                gap: 3px;
-            }
-
-            .nav-links a {
-                padding: 8px 9px;
-                font-size: 11px;
-            }
-
-            .nav-links .nav-cta {
-                padding: 9px 12px;
-            }
-
+        .days,
+        .tracker-row {
+            grid-template-columns: minmax(82px, 1fr) repeat(7, 19px);
+            gap: 4px;
         }
 
-
-        @media(max-width: 600px) {
-
-            .section {
-                padding: 75px 0;
-            }
-
-            .hero {
-                padding: 100px 0 70px;
-            }
-
-            .hero h1 {
-                font-size: 53px;
-            }
-
-            .planner-visual {
-                width: 330px;
-                height: 390px;
-                transform: none;
-            }
-
-            .planner-page {
-                width: 245px;
-                height: 315px;
-                padding: 27px;
-                right: 10px;
-            }
-
-            .planner-title {
-                font-size: 23px;
-            }
-
-            .planner-card {
-                width: 205px;
-                height: 125px;
-                left: 0;
-                bottom: 25px;
-                padding: 22px;
-            }
-
-            .planner-card strong {
-                font-size: 21px;
-            }
-
-            .planner-flower {
-                width: 70px;
-                height: 70px;
-                left: 0;
-            }
-
-            .planner-dots {
-                width: 85px;
-                height: 85px;
-                right: -5px;
-            }
-
-            .planner-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .benefit-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .intro-box {
-                padding: 35px;
-            }
-
-            .tracker-box {
-                padding: 25px 18px;
-                overflow-x: auto;
-            }
-
-            .tracker-row,
-            .days {
-                grid-template-columns: 105px repeat(7, 25px);
-                gap: 7px;
-            }
-
+        .tracker-row strong {
+            font-size: 8px;
         }
 
-    </style>
+        .tracker-dot {
+            width: 17px;
+            height: 17px;
+        }
+
+        .footer-art {
+            height: 190px;
+        }
+
+        .footer-main {
+            padding-left: 15px;
+            padding-right: 15px;
+        }
+
+        .footer-brand h2 {
+            font-size: 40px;
+        }
+
+        .footer-connect h3 {
+            font-size: 31px;
+        }
+
+        .footer-bottom {
+            padding-left: 15px;
+            padding-right: 15px;
+            padding-bottom: 75px;
+        }
+    }
+</style>
+
 
 </head>
 
 <body id="top">
 
-    <header class="fixed-header">
 
-        <nav class="navbar">
+<header class="fixed-header">
 
-            <a href="index.html" class="brand">
-                <span class="brand-main">Chandini</span>
-                <span class="brand-sub">Connects</span>
+    <nav class="navbar">
+
+        <a href="index.html" class="brand">
+            <span class="brand-main">Chandini</span>
+            <span class="brand-sub">Connects</span>
+        </a>
+
+        <div class="nav-links">
+
+            <a href="manifest.html">
+                Manifest With Chandini
             </a>
 
-            <div class="nav-links">
+            <a href="career-connect.html">
+                Career Connect
+            </a>
 
-                <a href="manifest.html">
-                    Manifest With Chandini
-                </a>
+            <a href="habit-planners.html">
+                Habit Trackers & Planners
+            </a>
 
-                <a href="career-connect.html">
-                    Career Connect
-                </a>
+            <a href="index.html#contact" class="nav-cta">
+                Contact Me
+            </a>
 
-                <a href="habit-planners.html">
-                    Habit Trackers & Planners
-                </a>
+        </div>
 
-                <a href="index.html#contact" class="nav-cta">
-                    Contact Me
-                </a>
+    </nav>
 
-            </div>
-
-        </nav>
-
-    </header>
+</header>
 
 
-    <main>
+<main>
 
-        <section class="hero">
+    <section class="hero">
 
-            <div class="container hero-grid">
+        <div class="container hero-grid">
 
-                <div class="hero-content reveal">
+            <div class="hero-content reveal">
 
-                    <div class="hero-tag">
-                        <span></span>
-                        Habits • Planning • Productivity
-                    </div>
-
-                    <h1>
-                        Small habits.
-                        <em>Big changes.</em>
-                    </h1>
-
-                    <p class="hero-text">
-                        Create routines that support the life you want.
-                        Plan your days with intention, track your progress
-                        and make consistency feel simple.
-                    </p>
-
-                    <div class="hero-buttons">
-
-                        <a href="#planners" class="primary-btn">
-                            Explore Planners
-                        </a>
-
-                        <a href="#habits" class="secondary-btn">
-                            Build Better Habits
-                        </a>
-
-                    </div>
-
+                <div class="hero-tag">
+                    <span></span>
+                    Habits • Planning • Productivity
                 </div>
 
+                <h1>
+                    Small habits.
+                    <em>Big changes.</em>
+                </h1>
 
-                <div class="planner-visual reveal">
+                <p class="hero-text">
+                    Create routines that support the life you want.
+                    Plan your days with intention, track your progress
+                    and make consistency feel simple.
+                </p>
 
-                    <div class="planner-flower"></div>
-
-                    <div class="planner-page">
-
-                        <div class="planner-subtitle">
-                            Today
-                        </div>
-
-                        <div class="planner-title">
-                            My Intentions
-                        </div>
-
-                        <div class="planner-lines">
-
-                            <div class="planner-line"></div>
-                            <div class="planner-line"></div>
-                            <div class="planner-line"></div>
-                            <div class="planner-line"></div>
-                            <div class="planner-line"></div>
-                            <div class="planner-line"></div>
-                            <div class="planner-line"></div>
-
-                        </div>
-
-                    </div>
-
-
-                    <div class="planner-card">
-
-                        <small>
-                            Daily reminder
-                        </small>
-
-                        <strong>
-                            Progress over perfection.
-                        </strong>
-
-                    </div>
-
-                    <div class="planner-dots"></div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <section class="section intro">
-
-            <div class="container intro-grid">
-
-                <div class="intro-box reveal">
-
-                    <div class="intro-icon">
-                        ✦
-                    </div>
-
-                    <h3>
-                        Your routine shapes your reality.
-                    </h3>
-
-                    <p>
-                        The life you want is built through the small
-                        choices you repeat every day.
-                    </p>
-
-                </div>
-
-
-                <div class="intro-content reveal">
-
-                    <div class="eyebrow">
-                        Why planners matter
-                    </div>
-
-                    <h2>
-                        Your goals need a system, not just motivation.
-                    </h2>
-
-                    <p>
-                        Motivation can get you started.
-                        A simple system helps you keep going.
-                    </p>
-
-                    <p>
-                        Habit trackers and planners give your goals
-                        a visible place in your everyday life,
-                        helping you focus on what actually matters.
-                    </p>
+                <div class="hero-buttons">
 
                     <a href="#planners" class="primary-btn">
-                        Find Your Planner
+                        Explore Planners
+                    </a>
+
+                    <a href="#habits" class="secondary-btn">
+                        Build Better Habits
                     </a>
 
                 </div>
 
             </div>
 
-        </section>
 
+            <div class="planner-visual reveal">
 
-        <section class="section planner-types" id="planners">
+                <div class="planner-flower"></div>
 
-            <div class="container">
+                <div class="planner-page">
 
-                <div class="section-heading reveal">
-
-                    <div class="eyebrow">
-                        Choose your system
+                    <div class="planner-subtitle">
+                        Today
                     </div>
 
-                    <h2>
-                        Plan the life you want to live.
-                    </h2>
-
-                    <p>
-                        Different goals need different kinds of structure.
-                        Choose a planner that fits the season you are in.
-                    </p>
-
-                </div>
-
-
-                <div class="planner-grid">
-
-                    <div class="planner-type reveal">
-
-                        <div class="planner-type-number">
-                            01
-                        </div>
-
-                        <h3>
-                            Daily Planner
-                        </h3>
-
-                        <p>
-                            Organize your day, choose your priorities
-                            and create space for the things that matter.
-                        </p>
-
-                        <span class="planner-type-tag">
-                            DAILY
-                        </span>
-
+                    <div class="planner-title">
+                        My Intentions
                     </div>
 
-
-                    <div class="planner-type reveal">
-
-                        <div class="planner-type-number">
-                            02
-                        </div>
-
-                        <h3>
-                            Weekly Planner
-                        </h3>
-
-                        <p>
-                            Step back from the daily rush and plan
-                            your week with a clear sense of direction.
-                        </p>
-
-                        <span class="planner-type-tag">
-                            WEEKLY
-                        </span>
-
-                    </div>
-
-
-                    <div class="planner-type reveal">
-
-                        <div class="planner-type-number">
-                            03
-                        </div>
-
-                        <h3>
-                            Monthly Planner
-                        </h3>
-
-                        <p>
-                            Set monthly intentions, map important goals
-                            and keep your bigger picture visible.
-                        </p>
-
-                        <span class="planner-type-tag">
-                            MONTHLY
-                        </span>
-
-                    </div>
-
-
-                    <div class="planner-type reveal">
-
-                        <div class="planner-type-number">
-                            04
-                        </div>
-
-                        <h3>
-                            Habit Tracker
-                        </h3>
-
-                        <p>
-                            Track the habits you want to build and
-                            turn consistency into something you can see.
-                        </p>
-
-                        <span class="planner-type-tag">
-                            HABITS
-                        </span>
-
-                    </div>
-
-
-                    <div class="planner-type reveal">
-
-                        <div class="planner-type-number">
-                            05
-                        </div>
-
-                        <h3>
-                            Goal Planner
-                        </h3>
-
-                        <p>
-                            Break bigger goals into smaller milestones
-                            and give yourself a realistic path forward.
-                        </p>
-
-                        <span class="planner-type-tag">
-                            GOALS
-                        </span>
-
-                    </div>
-
-
-                    <div class="planner-type reveal">
-
-                        <div class="planner-type-number">
-                            06
-                        </div>
-
-                        <h3>
-                            Self-Growth Journal
-                        </h3>
-
-                        <p>
-                            Reflect on your thoughts, progress,
-                            lessons and the person you are becoming.
-                        </p>
-
-                        <span class="planner-type-tag">
-                            REFLECTION
-                        </span>
-
+                    <div class="planner-lines">
+                        <div class="planner-line"></div>
+                        <div class="planner-line"></div>
+                        <div class="planner-line"></div>
+                        <div class="planner-line"></div>
+                        <div class="planner-line"></div>
+                        <div class="planner-line"></div>
+                        <div class="planner-line"></div>
                     </div>
 
                 </div>
+
+
+                <div class="planner-card">
+
+                    <small>
+                        Daily reminder
+                    </small>
+
+                    <strong>
+                        Progress over perfection.
+                    </strong>
+
+                </div>
+
+                <div class="planner-dots"></div>
 
             </div>
 
-        </section>
+        </div>
+
+    </section>
 
 
-        <section class="section habits" id="habits">
+    <section class="section intro">
 
-            <div class="container habit-layout">
+        <div class="container intro-grid">
 
-                <div class="habit-content reveal">
+            <div class="intro-box reveal">
 
-                    <div class="eyebrow">
-                        Build consistency
-                    </div>
-
-                    <h2>
-                        Make your habits visible.
-                    </h2>
-
-                    <p>
-                        You do not need to change everything at once.
-                        Choose a few habits that support your goals
-                        and show up for them consistently.
-                    </p>
-
-
-                    <div class="habit-list">
-
-                        <div class="habit-item">
-
-                            <div class="habit-check">
-                                ✓
-                            </div>
-
-                            <p>
-                                Start your morning intentionally
-                            </p>
-
-                        </div>
-
-
-                        <div class="habit-item">
-
-                            <div class="habit-check">
-                                ✓
-                            </div>
-
-                            <p>
-                                Move your body every day
-                            </p>
-
-                        </div>
-
-
-                        <div class="habit-item">
-
-                            <div class="habit-check">
-                                ✓
-                            </div>
-
-                            <p>
-                                Spend focused time learning
-                            </p>
-
-                        </div>
-
-
-                        <div class="habit-item">
-
-                            <div class="habit-check">
-                                ✓
-                            </div>
-
-                            <p>
-                                Reduce unnecessary screen time
-                            </p>
-
-                        </div>
-
-
-                        <div class="habit-item">
-
-                            <div class="habit-check">
-                                ✓
-                            </div>
-
-                            <p>
-                                Reflect before ending your day
-                            </p>
-
-                        </div>
-
-                    </div>
-
+                <div class="intro-icon">
+                    ✦
                 </div>
 
+                <h3>
+                    Your routine shapes your reality.
+                </h3>
 
-                <div class="tracker-box reveal">
-
-                    <div class="tracker-header">
-
-                        <h3>
-                            Weekly Habit Tracker
-                        </h3>
-
-                        <span>
-                            THIS WEEK
-                        </span>
-
-                    </div>
-
-
-                    <div class="days">
-
-                        <span></span>
-                        <span>M</span>
-                        <span>T</span>
-                        <span>W</span>
-                        <span>T</span>
-                        <span>F</span>
-                        <span>S</span>
-                        <span>S</span>
-
-                    </div>
-
-
-                    <div class="tracker-row">
-
-                        <strong>
-                            Morning routine
-                        </strong>
-
-                        <div class="tracker-dot done"></div>
-                        <div class="tracker-dot done"></div>
-                        <div class="tracker-dot done"></div>
-                        <div class="tracker-dot"></div>
-                        <div class="tracker-dot done"></div>
-                        <div class="tracker-dot"></div>
-                        <div class="tracker-dot"></div>
-
-                    </div>
-
-
-                    <div class="tracker-row">
-
-                        <strong>
-                            Reading
-                        </strong>
-
-                        <div class="tracker-dot done"></div>
-                        <div class="tracker-dot"></div>
-                        <div class="tracker-dot done"></div>
-                        <div class="tracker-dot done"></div>
-                        <div class="tracker-dot"></div>
-                        <div class="tracker-dot done"></div>
-                        <div class="tracker-dot"></div>
-
-                    </div>
-
-
-                    <div class="tracker-row">
-
-                        <strong>
-                            Exercise
-                        </strong>
-
-                        <div class="tracker-dot"></div>
-                        <div class="tracker-dot done"></div>
-                        <div class="tracker-dot done"></div>
-                        <div class="tracker-dot"></div>
-                        <div class="tracker-dot done"></div>
-                        <div class="tracker-dot"></div>
-                        <div class="tracker-dot done"></div>
-
-                    </div>
-
-
-                    <div class="tracker-row">
-
-                        <strong>
-                            Journaling
-                        </strong>
-
-                        <div class="tracker-dot done"></div>
-                        <div class="tracker-dot done"></div>
-                        <div class="tracker-dot"></div>
-                        <div class="tracker-dot done"></div>
-                        <div class="tracker-dot"></div>
-                        <div class="tracker-dot done"></div>
-                        <div class="tracker-dot"></div>
-
-                    </div>
-
-
-                    <div class="tracker-row">
-
-                        <strong>
-                            Water
-                        </strong>
-
-                        <div class="tracker-dot done"></div>
-                        <div class="tracker-dot done"></div>
-                        <div class="tracker-dot done"></div>
-                        <div class="tracker-dot done"></div>
-                        <div class="tracker-dot"></div>
-                        <div class="tracker-dot done"></div>
-                        <div class="tracker-dot done"></div>
-
-                    </div>
-
-                </div>
+                <p>
+                    The life you want is built through the small
+                    choices you repeat every day.
+                </p>
 
             </div>
 
-        </section>
 
-
-        <section class="section routine">
-
-            <div class="container">
-
-                <div class="section-heading reveal">
-
-                    <div class="eyebrow">
-                        Create your rhythm
-                    </div>
-
-                    <h2>
-                        A day with intention feels different.
-                    </h2>
-
-                    <p>
-                        Use your planner to create small moments
-                        of alignment throughout your day.
-                    </p>
-
-                </div>
-
-
-                <div class="routine-grid">
-
-                    <div class="routine-card reveal">
-
-                        <div class="routine-time">
-                            Morning
-                        </div>
-
-                        <h3>
-                            Set the tone.
-                        </h3>
-
-                        <p>
-                            Write your priorities, choose your intention
-                            and decide what deserves your attention today.
-                        </p>
-
-                    </div>
-
-
-                    <div class="routine-card reveal">
-
-                        <div class="routine-time">
-                            Afternoon
-                        </div>
-
-                        <h3>
-                            Check in.
-                        </h3>
-
-                        <p>
-                            Pause for a moment, review your progress
-                            and adjust your priorities if needed.
-                        </p>
-
-                    </div>
-
-
-                    <div class="routine-card reveal">
-
-                        <div class="routine-time">
-                            Evening
-                        </div>
-
-                        <h3>
-                            Reflect.
-                        </h3>
-
-                        <p>
-                            Celebrate what went well, notice what you
-                            learned and prepare yourself for tomorrow.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <section class="section benefits">
-
-            <div class="container">
-
-                <div class="section-heading reveal">
-
-                    <div class="eyebrow">
-                        More than planning
-                    </div>
-
-                    <h2>
-                        Build a life that feels more intentional.
-                    </h2>
-
-                </div>
-
-
-                <div class="benefit-grid">
-
-                    <div class="benefit reveal">
-
-                        <div class="benefit-icon">
-                            ✓
-                        </div>
-
-                        <p>
-                            Know what you need to focus on instead of
-                            constantly feeling overwhelmed.
-                        </p>
-
-                    </div>
-
-
-                    <div class="benefit reveal">
-
-                        <div class="benefit-icon">
-                            ✓
-                        </div>
-
-                        <p>
-                            Turn bigger goals into smaller,
-                            manageable actions.
-                        </p>
-
-                    </div>
-
-
-                    <div class="benefit reveal">
-
-                        <div class="benefit-icon">
-                            ✓
-                        </div>
-
-                        <p>
-                            See your progress and build confidence
-                            through consistency.
-                        </p>
-
-                    </div>
-
-
-                    <div class="benefit reveal">
-
-                        <div class="benefit-icon">
-                            ✓
-                        </div>
-
-                        <p>
-                            Create routines that support your
-                            personal and professional growth.
-                        </p>
-
-                    </div>
-
-
-                    <div class="benefit reveal">
-
-                        <div class="benefit-icon">
-                            ✓
-                        </div>
-
-                        <p>
-                            Make space for reflection and
-                            intentional decision-making.
-                        </p>
-
-                    </div>
-
-
-                    <div class="benefit reveal">
-
-                        <div class="benefit-icon">
-                            ✓
-                        </div>
-
-                        <p>
-                            Focus on progress instead of
-                            expecting perfection.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </section>
-
-
-        <section class="cta" id="connect">
-
-            <div class="container">
+            <div class="intro-content reveal">
 
                 <div class="eyebrow">
-                    Start small
+                    Why planners matter
                 </div>
 
                 <h2>
-                    Plan less.
-                    <em>Live more intentionally.</em>
+                    Your goals need a system, not just motivation.
                 </h2>
 
                 <p>
-                    Choose one habit, one goal and one small action.
-                    Your next chapter can begin with something that simple.
+                    Motivation can get you started.
+                    A simple system helps you keep going.
                 </p>
+
+                <p>
+                    Habit trackers and planners give your goals
+                    a visible place in your everyday life,
+                    helping you focus on what actually matters.
+                </p>
+
+                <a href="#planners" class="primary-btn">
+                    Find Your Planner
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="section planner-types" id="planners">
+
+        <div class="container">
+
+            <div class="section-heading reveal">
+
+                <div class="eyebrow">
+                    Choose your system
+                </div>
+
+                <h2>
+                    Plan the life you want to live.
+                </h2>
+
+                <p>
+                    Different goals need different kinds of structure.
+                    Choose a planner that fits the season you are in.
+                </p>
+
+            </div>
+
+
+            <div class="planner-grid">
+
+                <div class="planner-type reveal">
+                    <div class="planner-type-number">01</div>
+                    <h3>Daily Planner</h3>
+                    <p>
+                        Organize your day, choose your priorities
+                        and create space for the things that matter.
+                    </p>
+                    <span class="planner-type-tag">DAILY</span>
+                </div>
+
+
+                <div class="planner-type reveal">
+                    <div class="planner-type-number">02</div>
+                    <h3>Weekly Planner</h3>
+                    <p>
+                        Step back from the daily rush and plan
+                        your week with a clear sense of direction.
+                    </p>
+                    <span class="planner-type-tag">WEEKLY</span>
+                </div>
+
+
+                <div class="planner-type reveal">
+                    <div class="planner-type-number">03</div>
+                    <h3>Monthly Planner</h3>
+                    <p>
+                        Set monthly intentions, map important goals
+                        and keep your bigger picture visible.
+                    </p>
+                    <span class="planner-type-tag">MONTHLY</span>
+                </div>
+
+
+                <div class="planner-type reveal">
+                    <div class="planner-type-number">04</div>
+                    <h3>Habit Tracker</h3>
+                    <p>
+                        Track the habits you want to build and
+                        turn consistency into something you can see.
+                    </p>
+                    <span class="planner-type-tag">HABITS</span>
+                </div>
+
+
+                <div class="planner-type reveal">
+                    <div class="planner-type-number">05</div>
+                    <h3>Goal Planner</h3>
+                    <p>
+                        Break bigger goals into smaller milestones
+                        and give yourself a realistic path forward.
+                    </p>
+                    <span class="planner-type-tag">GOALS</span>
+                </div>
+
+
+                <div class="planner-type reveal">
+                    <div class="planner-type-number">06</div>
+                    <h3>Self-Growth Journal</h3>
+                    <p>
+                        Reflect on your thoughts, progress,
+                        lessons and the person you are becoming.
+                    </p>
+                    <span class="planner-type-tag">REFLECTION</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="section habits" id="habits">
+
+        <div class="container habit-layout">
+
+            <div class="habit-content reveal">
+
+                <div class="eyebrow">
+                    Build consistency
+                </div>
+
+                <h2>
+                    Make your habits visible.
+                </h2>
+
+                <p>
+                    You do not need to change everything at once.
+                    Choose a few habits that support your goals
+                    and show up for them consistently.
+                </p>
+
+
+                <div class="habit-list">
+
+                    <div class="habit-item">
+                        <div class="habit-check">✓</div>
+                        <p>Start your morning intentionally</p>
+                    </div>
+
+                    <div class="habit-item">
+                        <div class="habit-check">✓</div>
+                        <p>Move your body every day</p>
+                    </div>
+
+                    <div class="habit-item">
+                        <div class="habit-check">✓</div>
+                        <p>Spend focused time learning</p>
+                    </div>
+
+                    <div class="habit-item">
+                        <div class="habit-check">✓</div>
+                        <p>Reduce unnecessary screen time</p>
+                    </div>
+
+                    <div class="habit-item">
+                        <div class="habit-check">✓</div>
+                        <p>Reflect before ending your day</p>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="tracker-box reveal">
+
+                <div class="tracker-header">
+
+                    <h3>
+                        Weekly Habit Tracker
+                    </h3>
+
+                    <span>
+                        THIS WEEK
+                    </span>
+
+                </div>
+
+
+                <div class="days">
+
+                    <span></span>
+                    <span>M</span>
+                    <span>T</span>
+                    <span>W</span>
+                    <span>T</span>
+                    <span>F</span>
+                    <span>S</span>
+                    <span>S</span>
+
+                </div>
+
+
+                <div class="tracker-row">
+
+                    <strong>Morning routine</strong>
+
+                    <div class="tracker-dot done"></div>
+                    <div class="tracker-dot done"></div>
+                    <div class="tracker-dot done"></div>
+                    <div class="tracker-dot"></div>
+                    <div class="tracker-dot done"></div>
+                    <div class="tracker-dot"></div>
+                    <div class="tracker-dot"></div>
+
+                </div>
+
+
+                <div class="tracker-row">
+
+                    <strong>Reading</strong>
+
+                    <div class="tracker-dot done"></div>
+                    <div class="tracker-dot"></div>
+                    <div class="tracker-dot done"></div>
+                    <div class="tracker-dot done"></div>
+                    <div class="tracker-dot"></div>
+                    <div class="tracker-dot done"></div>
+                    <div class="tracker-dot"></div>
+
+                </div>
+
+
+                <div class="tracker-row">
+
+                    <strong>Exercise</strong>
+
+                    <div class="tracker-dot"></div>
+                    <div class="tracker-dot done"></div>
+                    <div class="tracker-dot done"></div>
+                    <div class="tracker-dot"></div>
+                    <div class="tracker-dot done"></div>
+                    <div class="tracker-dot"></div>
+                    <div class="tracker-dot done"></div>
+
+                </div>
+
+
+                <div class="tracker-row">
+
+                    <strong>Journaling</strong>
+
+                    <div class="tracker-dot done"></div>
+                    <div class="tracker-dot done"></div>
+                    <div class="tracker-dot"></div>
+                    <div class="tracker-dot done"></div>
+                    <div class="tracker-dot"></div>
+                    <div class="tracker-dot done"></div>
+                    <div class="tracker-dot"></div>
+
+                </div>
+
+
+                <div class="tracker-row">
+
+                    <strong>Water</strong>
+
+                    <div class="tracker-dot done"></div>
+                    <div class="tracker-dot done"></div>
+                    <div class="tracker-dot done"></div>
+                    <div class="tracker-dot done"></div>
+                    <div class="tracker-dot"></div>
+                    <div class="tracker-dot done"></div>
+                    <div class="tracker-dot done"></div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="section routine">
+
+        <div class="container">
+
+            <div class="section-heading reveal">
+
+                <div class="eyebrow">
+                    Create your rhythm
+                </div>
+
+                <h2>
+                    A day with intention feels different.
+                </h2>
+
+                <p>
+                    Use your planner to create small moments
+                    of alignment throughout your day.
+                </p>
+
+            </div>
+
+
+            <div class="routine-grid">
+
+                <div class="routine-card reveal">
+
+                    <div class="routine-time">
+                        Morning
+                    </div>
+
+                    <h3>
+                        Set the tone.
+                    </h3>
+
+                    <p>
+                        Write your priorities, choose your intention
+                        and decide what deserves your attention today.
+                    </p>
+
+                </div>
+
+
+                <div class="routine-card reveal">
+
+                    <div class="routine-time">
+                        Afternoon
+                    </div>
+
+                    <h3>
+                        Check in.
+                    </h3>
+
+                    <p>
+                        Pause for a moment, review your progress
+                        and adjust your priorities if needed.
+                    </p>
+
+                </div>
+
+
+                <div class="routine-card reveal">
+
+                    <div class="routine-time">
+                        Evening
+                    </div>
+
+                    <h3>
+                        Reflect.
+                    </h3>
+
+                    <p>
+                        Celebrate what went well, notice what you
+                        learned and prepare yourself for tomorrow.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="section benefits">
+
+        <div class="container">
+
+            <div class="section-heading reveal">
+
+                <div class="eyebrow">
+                    More than planning
+                </div>
+
+                <h2>
+                    Build a life that feels more intentional.
+                </h2>
+
+            </div>
+
+
+            <div class="benefit-grid">
+
+                <div class="benefit reveal">
+                    <div class="benefit-icon">✓</div>
+                    <p>
+                        Know what you need to focus on instead of
+                        constantly feeling overwhelmed.
+                    </p>
+                </div>
+
+                <div class="benefit reveal">
+                    <div class="benefit-icon">✓</div>
+                    <p>
+                        Turn bigger goals into smaller,
+                        manageable actions.
+                    </p>
+                </div>
+
+                <div class="benefit reveal">
+                    <div class="benefit-icon">✓</div>
+                    <p>
+                        See your progress and build confidence
+                        through consistency.
+                    </p>
+                </div>
+
+                <div class="benefit reveal">
+                    <div class="benefit-icon">✓</div>
+                    <p>
+                        Create routines that support your
+                        personal and professional growth.
+                    </p>
+                </div>
+
+                <div class="benefit reveal">
+                    <div class="benefit-icon">✓</div>
+                    <p>
+                        Make space for reflection and
+                        intentional decision-making.
+                    </p>
+                </div>
+
+                <div class="benefit reveal">
+                    <div class="benefit-icon">✓</div>
+                    <p>
+                        Focus on progress instead of
+                        expecting perfection.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <section class="cta" id="connect">
+
+        <div class="container">
+
+            <div class="eyebrow">
+                Start small
+            </div>
+
+            <h2>
+                Plan less.
+                <em>Live more intentionally.</em>
+            </h2>
+
+            <p>
+                Choose one habit, one goal and one small action.
+                Your next chapter can begin with something that simple.
+            </p>
+
+            <a href="https://www.instagram.com/chandini_connects/"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="primary-btn">
+                Connect With Me
+            </a>
+
+        </div>
+
+    </section>
+
+</main>
+
+
+<footer class="chandini-footer">
+
+    <div class="footer-art">
+        <img src="footer.webp" alt="Chandini Connects">
+    </div>
+
+
+    <div class="footer-main">
+
+        <div class="footer-brand">
+
+            <h2>
+                Chandini
+            </h2>
+
+            <span>
+                CONNECTS
+            </span>
+
+            <p>
+                Learn with clarity.<br>
+                Grow with confidence.<br>
+                Create with purpose.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <div class="footer-link-group">
+
+                <span>
+                    EXPLORE
+                </span>
+
+                <a href="#about">
+                    About
+                </a>
+
+                <a href="#work">
+                    Work
+                </a>
+
+                <a href="#courses">
+                    Courses
+                </a>
+
+                <a href="#workshops">
+                    Workshops
+                </a>
+
+            </div>
+
+
+            <div class="footer-link-group">
+
+                <span>
+                    CONNECT
+                </span>
+
+                <a href="#contact">
+                    Contact
+                </a>
+
+                <a href="https://www.instagram.com/chandini_connects/"
+                   target="_blank"
+                   rel="noopener noreferrer">
+                    Instagram
+                </a>
+
+                <a href="#" target="_blank">
+                    YouTube
+                </a>
+
+                <a href="#" target="_blank">
+                    WhatsApp
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-connect">
+
+            <span>
+                LET'S CONNECT
+            </span>
+
+            <h3>
+                Let’s learn,<br>
+                grow & <em>create.</em>
+            </h3>
+
+            <div class="footer-socials">
 
                 <a href="https://www.instagram.com/chandini_connects/"
                    target="_blank"
                    rel="noopener noreferrer"
-                   class="primary-btn">
-                    Connect With Me
+                   aria-label="Instagram">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+
+                <a href="#"
+                   target="_blank"
+                   aria-label="YouTube">
+                    <i class="fa-brands fa-youtube"></i>
+                </a>
+
+                <a href="#"
+                   target="_blank"
+                   aria-label="WhatsApp">
+                    <i class="fa-brands fa-whatsapp"></i>
+                </a>
+
+                <a href="mailto:chandiniconnects@gmail.com"
+                   aria-label="Email">
+                    <i class="fa-regular fa-envelope"></i>
                 </a>
 
             </div>
 
-        </section>
-
-    </main>
-
-
-    <footer class="chandini-footer">
-
-        <div class="footer-art">
-            <img src="footer.webp" alt="Chandini Connects">
         </div>
 
-        <div class="footer-main">
-
-            <div class="footer-brand">
-
-                <h2>
-                    Chandini
-                </h2>
-
-                <span>
-                    CONNECTS
-                </span>
-
-                <p>
-                    Learn with clarity.<br>
-                    Grow with confidence.<br>
-                    Create with purpose.
-                </p>
-
-            </div>
+    </div>
 
 
-            <div class="footer-links">
+    <div class="footer-bottom">
 
-                <div class="footer-link-group">
+        <span>
+            © 2026 CHANDINI CONNECTS
+        </span>
 
-                    <span>
-                        EXPLORE
-                    </span>
+        <span>
+            LEARN • GROW • CREATE • TOGETHER
+        </span>
 
-                    <a href="#about">
-                        About
-                    </a>
+        <a href="#top">
+            BACK TO TOP ↑
+        </a>
 
-                    <a href="#work">
-                        Work
-                    </a>
+    </div>
 
-                    <a href="#courses">
-                        Courses
-                    </a>
-
-                    <a href="#workshops">
-                        Workshops
-                    </a>
-
-                </div>
+</footer>
 
 
-                <div class="footer-link-group">
+<script>
 
-                    <span>
-                        CONNECT
-                    </span>
+    const revealElements =
+        document.querySelectorAll(".reveal");
 
-                    <a href="#contact">
-                        Contact
-                    </a>
+    const observer =
+        new IntersectionObserver(
+            entries => {
 
-                    <a href="https://www.instagram.com/chandini_connects/"
-                       target="_blank"
-                       rel="noopener noreferrer">
-                        Instagram
-                    </a>
+                entries.forEach(entry => {
 
-                    <a href="#" target="_blank">
-                        YouTube
-                    </a>
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add("active");
+                    }
 
-                    <a href="#" target="_blank">
-                        WhatsApp
-                    </a>
+                });
 
-                </div>
+            },
+            {
+                threshold: 0.12
+            }
+        );
 
-            </div>
-
-
-            <div class="footer-connect">
-
-                <span>
-                    LET'S CONNECT
-                </span>
-
-                <h3>
-                    Let’s learn,<br>
-                    grow & <em>create.</em>
-                </h3>
-
-                <div class="footer-socials">
-
-                    <a href="https://www.instagram.com/chandini_connects/"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       aria-label="Instagram">
-
-                        <i class="fa-brands fa-instagram"></i>
-
-                    </a>
-
-                    <a href="#"
-                       target="_blank"
-                       aria-label="YouTube">
-
-                        <i class="fa-brands fa-youtube"></i>
-
-                    </a>
-
-                    <a href="#"
-                       target="_blank"
-                       aria-label="WhatsApp">
-
-                        <i class="fa-brands fa-whatsapp"></i>
-
-                    </a>
-
-                    <a href="mailto:chandiniconnects@gmail.com"
-                       aria-label="Email">
-
-                        <i class="fa-regular fa-envelope"></i>
-
-                    </a>
-
-                </div>
-
-            </div>
-
-        </div>
+    revealElements.forEach(element => {
+        observer.observe(element);
+    });
 
 
-        <div class="footer-bottom">
+    document.addEventListener("DOMContentLoaded", function () {
 
-            <span>
-                © 2026 CHANDINI CONNECTS
-            </span>
+        const footer =
+            document.querySelector(".chandini-footer");
 
-            <span>
-                LEARN • GROW • CREATE • TOGETHER
-            </span>
+        if (!footer) return;
 
-            <a href="#top">
-                BACK TO TOP ↑
-            </a>
-
-        </div>
-
-    </footer>
-
-
-    <script>
-
-        const revealElements =
-            document.querySelectorAll(".reveal");
-
-        const observer =
+        const footerObserver =
             new IntersectionObserver(
+                function (entries) {
 
-                entries => {
-
-                    entries.forEach(entry => {
+                    entries.forEach(function (entry) {
 
                         if (entry.isIntersecting) {
 
-                            entry.target.classList.add("active");
+                            footer.classList.add("footer-visible");
+
+                            footerObserver.unobserve(footer);
 
                         }
 
                     });
 
                 },
-
                 {
-                    threshold: 0.12
+                    threshold: 0.08
                 }
-
             );
 
-        revealElements.forEach(element => {
+        footerObserver.observe(footer);
 
-            observer.observe(element);
+    });
 
-        });
+</script>
 
-
-        document.addEventListener("DOMContentLoaded", function () {
-
-            const footer =
-                document.querySelector(".chandini-footer");
-
-            if (!footer) return;
-
-            const footerObserver =
-                new IntersectionObserver(
-
-                    function (entries) {
-
-                        entries.forEach(function (entry) {
-
-                            if (entry.isIntersecting) {
-
-                                footer.classList.add("footer-visible");
-
-                                footerObserver.unobserve(footer);
-
-                            }
-
-                        });
-
-                    },
-
-                    {
-                        threshold: 0.08
-                    }
-
-                );
-
-            footerObserver.observe(footer);
-
-        });
-
-    </script>
 
 </body>
 
