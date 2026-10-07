@@ -1,4 +1,4 @@
-```html
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -602,6 +602,7 @@
         }
 
         @keyframes toolChange {
+
             0% {
                 opacity: 0;
                 transform: translateY(28px);
@@ -616,6 +617,7 @@
                 opacity: 1;
                 transform: translateY(0);
             }
+
         }
 
 
@@ -1350,6 +1352,531 @@
 
         @media(max-width: 768px) {
 
+            html {
+                scroll-behavior: smooth;
+            }
+
+            body {
+                width: 100%;
+                overflow-x: hidden;
+            }
+
+            .container {
+                width: min(92%, 560px);
+            }
+
+            .section {
+                padding: 70px 0;
+            }
+
+
+            /* NAVBAR */
+
+            .fixed-header {
+                position: sticky;
+                top: 0;
+                width: 100%;
+            }
+
+            .navbar {
+                width: 100%;
+                min-height: auto;
+                padding: 12px 14px 14px;
+                display: flex;
+                flex-direction: column;
+                gap: 12px;
+            }
+
+            .brand {
+                min-width: auto;
+                align-items: center;
+                justify-content: center;
+                line-height: .9;
+            }
+
+            .brand-main {
+                font-size: 39px;
+                letter-spacing: -1.5px;
+            }
+
+            .brand-sub {
+                font-size: 20px;
+                margin-left: 38px;
+                margin-top: 6px;
+                letter-spacing: .8px;
+            }
+
+            .nav-links {
+                width: 100%;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 5px;
+                flex-wrap: wrap;
+            }
+
+            .nav-links a {
+                padding: 8px 9px;
+                font-size: 10px;
+                line-height: 1.2;
+                text-align: center;
+                border-radius: 25px;
+            }
+
+            .nav-links .nav-cta {
+                padding: 9px 12px;
+            }
+
+
+            /* HERO */
+
+            .hero {
+                min-height: auto;
+                padding: 75px 0 70px;
+            }
+
+            .hero-grid {
+                width: min(92%, 560px);
+                grid-template-columns: 1fr;
+                gap: 48px;
+                text-align: center;
+            }
+
+            .hero-content {
+                width: 100%;
+                max-width: 100%;
+                margin: auto;
+            }
+
+            .hero-label {
+                padding: 8px 13px;
+                font-size: 9px;
+                letter-spacing: 1.1px;
+                margin-bottom: 20px;
+            }
+
+            .hero-label span {
+                width: 6px;
+                height: 6px;
+            }
+
+            .hero h1 {
+                font-size: clamp(43px, 13vw, 58px);
+                line-height: 1;
+                margin-bottom: 22px;
+            }
+
+            .hero-description {
+                max-width: 480px;
+                margin: 0 auto 28px;
+                font-size: 14px;
+                line-height: 1.75;
+            }
+
+            .hero-buttons {
+                justify-content: center;
+                gap: 10px;
+            }
+
+            .primary-btn,
+            .secondary-btn {
+                padding: 13px 20px;
+                font-size: 12px;
+            }
+
+            .hero-photo {
+                width: min(72vw, 290px);
+                height: min(72vw, 290px);
+            }
+
+            .hero-photo::before {
+                width: 65px;
+                height: 65px;
+                right: -10px;
+                top: -12px;
+            }
+
+            .hero-photo::after {
+                width: 42px;
+                height: 42px;
+                left: -10px;
+                bottom: 15px;
+            }
+
+
+            /* SECTION HEADINGS */
+
+            .section-heading {
+                width: 100%;
+                margin-bottom: 42px;
+            }
+
+            .eyebrow {
+                font-size: 10px;
+                letter-spacing: 1.6px;
+                margin-bottom: 12px;
+            }
+
+            .section-heading h2 {
+                font-size: clamp(34px, 10vw, 48px);
+                line-height: 1.08;
+                margin-bottom: 16px;
+            }
+
+            .section-heading p {
+                font-size: 14px;
+                line-height: 1.75;
+            }
+
+
+            /* PHILOSOPHY */
+
+            .philosophy-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+                text-align: center;
+            }
+
+            .small-photo {
+                width: min(70vw, 280px);
+                height: min(70vw, 280px);
+            }
+
+            .text-content h2 {
+                font-size: clamp(36px, 10vw, 50px);
+                line-height: 1.08;
+                margin-bottom: 20px;
+            }
+
+            .text-content p {
+                font-size: 14px;
+                line-height: 1.8;
+                margin-bottom: 15px;
+            }
+
+
+            /* TRANSFORMATION */
+
+            .three-grid {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .transform-card {
+                padding: 28px 24px;
+                border-radius: 22px;
+            }
+
+            .card-icon {
+                width: 48px;
+                height: 48px;
+                font-size: 18px;
+                margin-bottom: 20px;
+            }
+
+            .transform-card h3 {
+                font-size: 25px;
+                margin-bottom: 10px;
+            }
+
+            .transform-card p {
+                font-size: 13px;
+                line-height: 1.7;
+            }
+
+
+            /* METHOD */
+
+            .method-wrapper {
+                grid-template-columns: 1fr;
+                gap: 38px;
+            }
+
+            .method-intro {
+                position: static;
+                text-align: center;
+            }
+
+            .method-intro h2 {
+                font-size: clamp(38px, 10vw, 50px);
+                line-height: 1.05;
+            }
+
+            .method-intro p {
+                margin: auto;
+                font-size: 14px;
+                line-height: 1.8;
+            }
+
+            .method-cards {
+                gap: 13px;
+            }
+
+            .method-card {
+                padding: 20px;
+                grid-template-columns: 46px 1fr;
+                gap: 15px;
+                border-radius: 19px;
+            }
+
+            .method-card-number {
+                width: 46px;
+                height: 46px;
+                font-size: 14px;
+            }
+
+            .method-card-content h3 {
+                font-size: 23px;
+                margin-bottom: 5px;
+            }
+
+            .method-card-content p {
+                font-size: 12px;
+                line-height: 1.65;
+            }
+
+
+            /* TOOLS */
+
+            .tools-showcase {
+                width: 100%;
+            }
+
+            .tool-animation {
+                width: 100%;
+                min-height: 270px;
+                padding: 35px 24px;
+                border-radius: 27px;
+            }
+
+            .tool-number {
+                width: 52px;
+                height: 52px;
+                font-size: 18px;
+                margin-bottom: 18px;
+            }
+
+            .tool-content h3 {
+                font-size: 29px;
+                margin-bottom: 10px;
+            }
+
+            .tool-content p {
+                font-size: 13px;
+                line-height: 1.7;
+            }
+
+
+            /* ROUTINE */
+
+            .routine-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .routine .text-content {
+                text-align: center;
+            }
+
+            .routine-list {
+                margin-top: 25px;
+                text-align: left;
+            }
+
+            .routine-row {
+                gap: 13px;
+                padding: 15px 0;
+            }
+
+            .routine-row span {
+                min-width: 23px;
+                font-size: 13px;
+            }
+
+            .routine-row p {
+                font-size: 13px;
+                line-height: 1.6;
+            }
+
+            .routine-photo {
+                width: min(78vw, 300px);
+                height: min(105vw, 380px);
+            }
+
+
+            /* FOR YOU */
+
+            .for-grid {
+                grid-template-columns: 1fr;
+                gap: 12px;
+            }
+
+            .for-item {
+                padding: 19px 18px;
+                border-radius: 17px;
+                gap: 12px;
+            }
+
+            .for-item span {
+                font-size: 17px;
+            }
+
+            .for-item p {
+                font-size: 13px;
+                line-height: 1.65;
+            }
+
+
+            /* JOURNEY */
+
+            .journey-heading {
+                margin-bottom: 38px;
+            }
+
+            .journey-heading h2 {
+                font-size: clamp(35px, 10vw, 48px);
+            }
+
+            .journey-heading p {
+                font-size: 13px;
+            }
+
+            .journey-steps {
+                grid-template-columns: 1fr;
+                gap: 15px;
+            }
+
+            .journey-step {
+                padding: 23px 21px;
+                border-radius: 20px;
+            }
+
+            .journey-step-top {
+                margin-bottom: 23px;
+            }
+
+            .journey-number {
+                font-size: 10px;
+                letter-spacing: 2.5px;
+            }
+
+            .journey-icon {
+                width: 48px;
+                height: 48px;
+                font-size: 18px;
+            }
+
+            .journey-step h3 {
+                font-size: 35px;
+                margin-bottom: 10px;
+            }
+
+            .journey-step p {
+                font-size: 13px;
+                line-height: 1.75;
+                min-height: auto;
+            }
+
+            .journey-progress {
+                margin-top: 20px;
+            }
+
+
+            /* TESTIMONIALS */
+
+            .testimonial-grid {
+                grid-template-columns: 1fr;
+                gap: 14px;
+            }
+
+            .testimonial {
+                padding: 25px 22px;
+                border-radius: 20px;
+            }
+
+            .testimonial-stars {
+                font-size: 13px;
+                letter-spacing: 3px;
+                margin-bottom: 15px;
+            }
+
+            .testimonial p {
+                font-size: 13px;
+                line-height: 1.75;
+                margin-bottom: 20px;
+            }
+
+            .testimonial strong {
+                font-size: 12px;
+            }
+
+
+            /* RESOURCE */
+
+            .resource-box {
+                width: 100%;
+                padding: 35px 20px;
+                border-radius: 27px;
+            }
+
+            .resource-box h2 {
+                font-size: clamp(35px, 10vw, 48px);
+                line-height: 1.08;
+            }
+
+            .resource-box p {
+                font-size: 13px;
+                line-height: 1.75;
+                margin-bottom: 24px;
+            }
+
+
+            /* FAQ */
+
+            .faq-list {
+                width: 100%;
+            }
+
+            details {
+                padding: 19px 0;
+            }
+
+            summary {
+                font-size: 14px;
+                line-height: 1.5;
+            }
+
+            summary::after {
+                font-size: 19px;
+                flex-shrink: 0;
+            }
+
+            details p {
+                font-size: 13px;
+                line-height: 1.75;
+                padding-top: 12px;
+            }
+
+
+            /* FINAL CTA */
+
+            .final-cta {
+                padding: 75px 0;
+            }
+
+            .final-cta h2 {
+                font-size: clamp(39px, 11vw, 55px);
+                line-height: 1.06;
+            }
+
+            .final-cta p {
+                font-size: 14px;
+                line-height: 1.75;
+            }
+
+
+            /* FOOTER */
+
             .chandini-footer {
                 width: 100% !important;
                 margin: 0 !important;
@@ -1358,7 +1885,8 @@
 
             .footer-art {
                 width: 100%;
-                height: 220px;
+                height: 205px;
+                overflow: hidden;
             }
 
             .footer-art img {
@@ -1369,30 +1897,45 @@
             }
 
             .footer-main {
+                width: 100%;
                 padding: 43px 20px 45px;
+                display: grid;
                 grid-template-columns: 1fr;
-                gap: 42px;
+                gap: 40px;
                 background: #000;
             }
 
             .footer-brand h2 {
-                font-size: 45px;
+                font-size: 43px;
             }
 
             .footer-brand > span {
-                margin-top: 11px;
+                margin-top: 10px;
                 font-size: 7px;
-                letter-spacing: 6px;
+                letter-spacing: 5.5px;
             }
 
             .footer-brand p {
-                margin-top: 21px;
+                margin-top: 20px;
                 font-size: 10px;
+                line-height: 1.8;
             }
 
             .footer-links {
+                display: grid;
                 grid-template-columns: 1fr 1fr;
                 gap: 25px;
+            }
+
+            .footer-link-group {
+                gap: 11px;
+            }
+
+            .footer-link-group > span,
+            .footer-connect > span {
+                font-size: 7px;
+                letter-spacing: 2.5px;
+                margin-bottom: 8px;
             }
 
             .footer-link-group a {
@@ -1400,8 +1943,14 @@
             }
 
             .footer-connect h3 {
-                max-width: 280px;
-                font-size: 35px;
+                max-width: 300px;
+                font-size: 34px;
+                line-height: 1.05;
+                margin-bottom: 22px;
+            }
+
+            .footer-socials {
+                gap: 9px;
             }
 
             .footer-socials a {
@@ -1411,174 +1960,150 @@
             }
 
             .footer-bottom {
+                width: 100%;
                 min-height: auto;
-                padding: 24px 20px 100px;
+                padding: 23px 20px 95px;
+                display: flex;
                 flex-direction: column;
                 align-items: flex-start;
-                gap: 11px;
+                justify-content: center;
+                gap: 10px;
             }
 
             .footer-bottom span,
             .footer-bottom a {
                 font-size: 6.5px;
-                letter-spacing: 1.6px;
-            }
-
-            .section {
-                padding: 75px 0;
-            }
-
-            .navbar {
-                min-height: 70px;
-                padding: 10px 15px;
-            }
-
-            .brand-main {
-                font-size: 38px;
-            }
-
-            .brand-sub {
-                font-size: 20px;
-                margin-left: 38px;
-            }
-
-            .nav-links {
-                gap: 3px;
-            }
-
-            .nav-links a {
-                padding: 8px 9px;
-                font-size: 11px;
-            }
-
-            .nav-links .nav-cta {
-                padding: 9px 12px;
-            }
-
-            .hero {
-                padding: 125px 0 70px;
-            }
-
-            .hero h1 {
-                font-size: 54px;
-            }
-
-            .hero-photo {
-                width: 270px;
-                height: 270px;
-            }
-
-            .hero-photo::before {
-                width: 70px;
-                height: 70px;
-                right: -12px;
-                top: -15px;
-            }
-
-            .hero-photo::after {
-                width: 45px;
-                height: 45px;
-                left: -10px;
-            }
-
-            .small-photo {
-                width: 280px;
-                height: 280px;
-            }
-
-            .routine-photo {
-                width: 280px;
-                height: 360px;
-            }
-
-            .method-wrapper {
-                gap: 40px;
-            }
-
-            .method-intro h2 {
-                font-size: 42px;
-            }
-
-            .method-card {
-                padding: 22px;
-                grid-template-columns: 48px 1fr;
-                gap: 16px;
-                border-radius: 20px;
-            }
-
-            .method-card-number {
-                width: 46px;
-                height: 46px;
-                font-size: 16px;
-            }
-
-            .method-card-content h3 {
-                font-size: 24px;
-            }
-
-            .method-card-content p {
-                font-size: 13px;
-            }
-
-            .tool-animation {
-                width: 92%;
-                min-height: 280px;
-                padding: 35px 25px;
-                border-radius: 28px;
-            }
-
-            .tool-content h3 {
-                font-size: 30px;
-            }
-
-            .tool-content p {
-                font-size: 14px;
-            }
-
-            .resource-box {
-                padding: 35px 22px;
-            }
-
-            /* JOURNEY MOBILE */
-
-            .journey-heading {
-                margin-bottom: 40px;
-            }
-
-            .journey-steps {
-                grid-template-columns: 1fr;
-                gap: 17px;
-            }
-
-            .journey-step {
-                padding: 25px 24px;
-                border-radius: 21px;
-            }
-
-            .journey-step-top {
-                margin-bottom: 22px;
-            }
-
-            .journey-step h3 {
-                font-size: 36px;
-            }
-
-            .journey-step p {
-                min-height: auto;
-            }
-
-            .journey-progress {
-                margin-top: 22px;
+                letter-spacing: 1.5px;
+                line-height: 1.5;
             }
         }
 
 
-        /* ================= SMALL MOBILE ================= */
+        /* ================= SMALL PHONES ================= */
 
         @media(max-width: 390px) {
 
+            .container {
+                width: 92%;
+            }
+
+            .navbar {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+
+            .brand-main {
+                font-size: 35px;
+            }
+
+            .brand-sub {
+                font-size: 18px;
+                margin-left: 34px;
+            }
+
+            .nav-links {
+                gap: 2px;
+            }
+
+            .nav-links a {
+                padding: 7px 7px;
+                font-size: 9px;
+            }
+
+            .nav-links .nav-cta {
+                padding: 8px 9px;
+            }
+
+            .hero {
+                padding-top: 65px;
+            }
+
+            .hero h1 {
+                font-size: 45px;
+            }
+
+            .hero-description {
+                font-size: 13px;
+            }
+
+            .hero-photo {
+                width: 245px;
+                height: 245px;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .primary-btn,
+            .secondary-btn {
+                width: auto;
+                min-width: 175px;
+                justify-content: center;
+            }
+
+            .small-photo {
+                width: 245px;
+                height: 245px;
+            }
+
+            .text-content h2 {
+                font-size: 38px;
+            }
+
+            .method-intro h2 {
+                font-size: 38px;
+            }
+
+            .method-card {
+                padding: 18px 16px;
+                grid-template-columns: 43px 1fr;
+                gap: 12px;
+            }
+
+            .method-card-number {
+                width: 42px;
+                height: 42px;
+                font-size: 13px;
+            }
+
+            .method-card-content h3 {
+                font-size: 21px;
+            }
+
+            .method-card-content p {
+                font-size: 11.5px;
+            }
+
+            .tool-animation {
+                min-height: 260px;
+                padding: 30px 20px;
+            }
+
+            .tool-content h3 {
+                font-size: 27px;
+            }
+
+            .routine-photo {
+                width: 270px;
+                height: 350px;
+            }
+
+            .journey-step {
+                padding: 21px 18px;
+            }
+
+            .journey-step h3 {
+                font-size: 32px;
+            }
+
+            .resource-box {
+                padding: 30px 17px;
+            }
+
             .footer-art {
-                height: 195px;
+                height: 185px;
             }
 
             .footer-main {
@@ -1587,25 +2112,17 @@
             }
 
             .footer-brand h2 {
-                font-size: 41px;
+                font-size: 40px;
             }
 
             .footer-connect h3 {
-                font-size: 32px;
+                font-size: 31px;
             }
 
             .footer-bottom {
                 padding-left: 16px;
                 padding-right: 16px;
-                padding-bottom: 95px;
-            }
-
-            .journey-step {
-                padding: 23px 20px;
-            }
-
-            .journey-step h3 {
-                font-size: 33px;
+                padding-bottom: 90px;
             }
         }
 
@@ -2117,8 +2634,7 @@
 
                 <div class="routine-photo reveal">
 
-                    <img src="C:\Users\muche\OneDrive\Desktop\folder\manifest.png"
-                         alt="Daily alignment">
+                    <img src="manifest.png" alt="Daily alignment">
 
                 </div>
 
@@ -2223,7 +2739,6 @@
 
                 <div class="journey-steps">
 
-
                     <div class="journey-step reveal">
 
                         <div class="journey-step-top">
@@ -2312,7 +2827,6 @@
                         </div>
 
                     </div>
-
 
                 </div>
 
@@ -2676,6 +3190,7 @@
 
                     <a href="https://www.instagram.com/chandini_connects/"
                        target="_blank"
+                       rel="noopener noreferrer"
                        aria-label="Instagram">
 
                         <i class="fa-brands fa-instagram"></i>
@@ -2911,4 +3426,4 @@
 </body>
 
 </html>
-```
+
